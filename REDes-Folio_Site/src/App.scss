@@ -1,0 +1,142 @@
+
+/* ========================================
+   BREAKPOINT VARIABLES
+======================================== */
+
+$desktop: 992px;
+$tablet: 991px;
+$mobile-l: 767px;
+$mobile: 479px;
+
+
+/* ========================================
+   BREAKPOINT MIXINS
+   Max-width only: each affects that size and down
+======================================== */
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media (max-width: $mobile-l) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+
+/* ========================================
+   GLOBAL CSS VARIABLES
+======================================== */
+
+:root {
+
+  /* BUTTON VARS */
+  --button--padding-t-b: 0.5em;
+  --button--padding-l-r: 0.75em;
+  --button--font-size: 1rem;
+  --button--border-radius: 0.25rem;
+
+
+  /* SHADOW VARS */
+  --shadow-default: 4px 4px #1f1f1f;
+  --shadow-default-reset: 0px 0px #1f1f1f;
+
+  --shadow-light: 4px 4px #3f3f3f;
+  --shadow-light-reset: 0px 0px #3f3f3f;
+
+
+  /* TEXT VARS */
+  --text-h0: clamp(1.9956rem, 1.0193rem + 4.1657vw, 4.7684rem);
+  --text-h1: clamp(1.7739rem, 1.2785rem + 2.1135vw, 3.8147rem);
+  --text-h2: clamp(1.5768rem, 1.2188rem + 1.5275vw, 3.0518rem);
+  --text-h3: clamp(1.4016rem, 1.1492rem + 1.0768vw, 2.4414rem);
+  --text-h4: clamp(1.2458rem, 1.0742rem + 0.7325vw, 1.9531rem);
+  --text-h5: clamp(1.1074rem, 0.997rem + 0.4713vw, 1.5625rem);
+  --text-h6: clamp(0.9844rem, 0.9199rem + 0.2751vw, 1.25rem);
+  --text-p: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);
+  --text-p-small: clamp(0.7778rem, 0.77rem + 0.0334vw, 0.8rem);
+
+
+  /* WRAPPER VARS */
+  --wrapper-w: min(90vw, clamp(337.5px, calc(78.815534vw + 41.941748px), 1555.2px));
+  --wrapper-edge: calc((100vw - var(--wrapper-w)) / 2);
+  --wrapper-edge-adjust: calc(-1 * var(--wrapper-edge));
+
+  /* COLOUR VARS */
+  --colour-dark: #1f1f1f;
+  --colour-light: #f3f3f3;
+  --colour-light: #7531f7;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+  font-size: 16px;
+  margin: 0;
+  font-family: Inter Tight, sans-serif;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+* {
+  border-radius: 0;
+  border-color: transparent;
+  border-width: 0;
+  margin: 0;
+  line-height: 1.2em;
+  border-style: solid;
+  margin-block: 0;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+  height: auto;
+  font-family: Inter Tight, sans-serif;
+}
+
+
+
+
+.section {
+  padding-top: var(--wrapper-edge);
+  padding-bottom: var(--wrapper-edge);
+
+  background-color: white;
+
+}
+
+.section.hero {
+  width: 100vw;
+  height: 100vh;
+
+  @include tablet {
+    height: 100dvh;
+  }
+}
+
+
+// WRAPPER
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--wrapper-w);
+}
