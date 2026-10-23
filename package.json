@@ -1,6 +1,25 @@
+
 {
+  "name": "redes-folio-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "latest"
+  },
   "devDependencies": {
-    "sass-embedded": "^1.106.1",
-    "scss": "^0.2.4"
+    "typescript": "latest",
+    "vite": "latest",
+    "eslint": "latest",
+    "sass-embedded": "^1.106.1"
   }
 }
