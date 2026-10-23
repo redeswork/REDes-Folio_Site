@@ -123,6 +123,10 @@ body {
 
 }
 
+.section.dark {
+  background-color: var(--colour-dark);
+}
+
 .section.hero {
   width: 100vw;
   height: 100vh;
@@ -139,4 +143,18 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: var(--wrapper-w);
+
+}
+
+.wrapper.full-h {
+  height: 100%;
+}
+
+
+.card {
+  display: flex;
+}
+
+.card {
+  
 }

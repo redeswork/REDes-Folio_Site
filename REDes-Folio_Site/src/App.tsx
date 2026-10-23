@@ -9,7 +9,9 @@ export default function App() {
   return (
 
     <section className='section hero dark'>
+      <div className='wrapper full-h'>
 
+      </div>
     </section>
 
   )
