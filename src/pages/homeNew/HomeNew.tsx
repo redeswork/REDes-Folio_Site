@@ -8,10 +8,12 @@ export function HomeNew() {
     return (
 
         <PageStructure>
-            <section className="section dark">
-                <div className="content vertical">
-                    <h1 style={{color: "var(--colour-light)"}}>This is a different page!!</h1>
-                    <Button link="/" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} rotateIcon={180} rotateLargeIcon={180}/>
+            <section className="section dark min-100">
+                <div className="wrapper">
+                    <div className="content vertical">
+                        <h1 style={{color: "var(--colour-light)"}}>This is a different page!!</h1>
+                        <Button link="/" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} rotateIcon={180} rotateLargeIcon={180}/>
+                    </div>
                 </div>
             </section>
         </PageStructure>

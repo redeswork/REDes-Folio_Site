@@ -145,6 +145,14 @@ a {
   background-color: var(--colour-dark);
 }
 
+.section.min-100 {
+  min-height: 100vh;
+
+  @include tablet {
+    height: 100dvh;
+  }
+}
+
 .section.hero {
   width: 100vw;
   height: 100vh;

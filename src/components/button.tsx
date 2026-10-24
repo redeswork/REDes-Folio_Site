@@ -1,4 +1,3 @@
-
 import { icons } from "./icons/@iconMap"
 
 export function Button({
@@ -35,147 +34,164 @@ export function Button({
     enableDot = false,
     dotColour = "var(--colour-cta)",
 
-    
     link = "/",
-    transitionKey}:
-    {
-        anim?: string,
-        animDuration?: number,
-        animOrigin?: string,
+    transitionKey
+}: {
+    anim?: string,
+    animDuration?: number,
+    animOrigin?: string,
 
-        splitType?: string,
+    splitType?: string,
 
-        text?: string,
-        textColour?: string,
-        textColourTarget?: string,
+    text?: string,
+    textColour?: string,
+    textColourTarget?: string,
 
-        enableBg?: true,
-        bgColour?: string,
-        bgColourTarget?: string,
+    enableBg?: boolean,
+    bgColour?: string,
+    bgColourTarget?: string,
 
-        enableIcon?: boolean,
-        iconSize?: string,
-        iconColour?: string,
-        icon?: keyof typeof icons,
-        rotateIcon?: number,
+    enableIcon?: boolean,
+    iconSize?: string,
+    iconColour?: string,
+    icon?: keyof typeof icons,
+    rotateIcon?: number,
 
-        enableLargeIcon?: boolean,
-        largeIconSize?: string,
-        largeIconColour?: string,
-        largeIconColourTarget?: string,
-        largeIcon?: keyof typeof icons,
-        rotateLargeIcon?: number,
+    enableLargeIcon?: boolean,
+    largeIconSize?: string,
+    largeIconColour?: string,
+    largeIconColourTarget?: string,
+    largeIcon?: keyof typeof icons,
+    rotateLargeIcon?: number,
 
-        largeIconBgColour?: string,
-        largeIconBgColourTarget?: string,
+    largeIconBgColour?: string,
+    largeIconBgColourTarget?: string,
 
-        enableDot?: boolean,
-        dotColour?: string,
+    enableDot?: boolean,
+    dotColour?: string,
 
-        link?: string,
-        transitionKey?: string}
-    ) {
+    link?: string,
+    transitionKey?: string
+}) {
 
     const Icon = icons[icon]
     const LargeIcon = icons[largeIcon]
 
     return (
-
         <div
-        className="button"
+            className="button"
 
-        data-anim={anim}
-        data-anim-duration={animDuration}
-        data-anim-origin={animOrigin}
+            data-anim={anim}
+            data-anim-duration={animDuration}
+            data-anim-origin={animOrigin}
 
-        data-split-type={splitType}
-        
-        data-textColour={textColour}
-        data-textColourChange={textColourTarget}
+            data-split-type={splitType}
 
-        data-bgColour={bgColour}
-        data-bgColourChange={bgColourTarget}
+            data-text-colour={textColour}
+            data-text-colour-change={textColourTarget}
 
-        data-largeIconColour={largeIconColour}
-        data-largeIconColourTarget={largeIconColourTarget}
+            data-bg-colour={bgColour}
+            data-bg-colour-change={bgColourTarget}
 
-        data-largeIconBgColour={largeIconBgColour}
-        data-largeIconBgColourTarget={largeIconBgColourTarget}
+            data-large-icon-colour={largeIconColour}
+            data-large-icon-colour-target={largeIconColourTarget}
+
+            data-large-icon-bg-colour={largeIconBgColour}
+            data-large-icon-bg-colour-target={largeIconBgColourTarget}
         >
 
             {/* LARGE ICON */}
 
             {enableLargeIcon && (
-
-            <div className="button-icon-wrap-large" data-anim="largeIconWrap" style={{backgroundColor: largeIconBgColour}}>
-
-                <div className="button-icon-div" data-anim="iconWrapInner" style={{width: largeIconSize, height: largeIconSize}}>
-
-                    <div className="button-icon" data-anim="largeIcon">
-                        <LargeIcon colour={largeIconColour} rotate={rotateLargeIcon}/>
+                <div
+                    className="button-icon-wrap-large"
+                    data-anim="largeIconWrap"
+                    style={{ backgroundColor: largeIconBgColour }}
+                >
+                    <div
+                        className="button-icon-div"
+                        data-anim="iconWrapInner"
+                        style={{ width: largeIconSize, height: largeIconSize }}
+                    >
+                        <div className="button-icon" data-anim="largeIcon">
+                            <LargeIcon colour={largeIconColour} rotate={rotateLargeIcon} />
+                        </div>
+                        <div className="button-icon absolute" data-anim="largeIcon">
+                            <LargeIcon colour={largeIconColour} rotate={rotateLargeIcon} />
+                        </div>
                     </div>
-                    <div className="button-icon absolute" data-anim="largeIcon">
-                        <LargeIcon colour={largeIconColour} rotate={rotateLargeIcon}/>
-                    </div>
-
                 </div>
-            </div>
             )}
-
 
             {/* DOT */}
 
             {enableDot && (
-
-            <div className="button-dot-wrap" data-anim="dotWrap">
-                <div className="button-dot" data-anim="buttonDot" style={{backgroundColor: dotColour}}></div>
-            </div>
+                <div className="button-dot-wrap" data-anim="dotWrap">
+                    <div
+                        className="button-dot"
+                        data-anim="buttonDot"
+                        style={{ backgroundColor: dotColour }}
+                    ></div>
+                </div>
             )}
-
 
             {/* TEXT */}
 
             <div className="button-text-wrap" data-anim="textWrap">
-                <p className="button-text" data-anim="buttonText" style={{color:textColour}}>{text}</p>
-                <p className="button-text absolute" data-anim="buttonText" style={{color:textColour}}>{text}</p>
+                <p
+                    className="button-text"
+                    data-anim="buttonText"
+                    style={{ color: textColour }}
+                >
+                    {text}
+                </p>
+                <p
+                    className="button-text absolute"
+                    data-anim="buttonText"
+                    style={{ color: textColour }}
+                >
+                    {text}
+                </p>
             </div>
-
 
             {/* BACKGROUND */}
 
             {enableBg && (
-
-                <div className="button-bg" data-anim="buttonBG" style={{backgroundColor: bgColour}}></div>
+                <div
+                    className="button-bg"
+                    data-anim="buttonBG"
+                    style={{ backgroundColor: bgColour }}
+                ></div>
             )}
-
 
             {/* ICON */}
 
             {enableIcon && (
-
-            <div className="button-icon-wrap-outer" data-anim="iconWrap">
-                <div className="button-icon-wrap">
-                    <div className="button-icon-div" data-anim="iconWrapInner" style={{width: iconSize, height: iconSize}}>
-
-                        <div className="button-icon" data-anim="icon">
-                            <Icon colour={iconColour} rotate={rotateIcon}/>
+                <div className="button-icon-wrap-outer" data-anim="iconWrap">
+                    <div className="button-icon-wrap">
+                        <div
+                            className="button-icon-div"
+                            data-anim="iconWrapInner"
+                            style={{ width: iconSize, height: iconSize }}
+                        >
+                            <div className="button-icon" data-anim="icon">
+                                <Icon colour={iconColour} rotate={rotateIcon} />
+                            </div>
+                            <div className="button-icon absolute" data-anim="icon">
+                                <Icon colour={iconColour} rotate={rotateIcon} />
+                            </div>
                         </div>
-                        <div className="button-icon absolute" data-anim="icon">
-                            <Icon colour={iconColour} rotate={rotateIcon}/>
-                        </div>
-
                     </div>
                 </div>
-            </div>
-        
             )}
-
 
             {/* LINK */}
 
-            <a className="button-link" href={link} data-transition={transitionKey}></a>
-
-            
+            <a
+                className="button-link"
+                href={link}
+                data-transition={transitionKey}
+            ></a>
         </div>
     )
 }
