@@ -1,5 +1,5 @@
 import './Home.scss'
-import { PageStructure } from '../../components/pageStructure'
+// import { PageStructure } from '../../components/pageStructure'
 
 import { Button } from '../../components/button'
 
@@ -8,7 +8,6 @@ export function HomePage() {
 
   return (
 
-    <PageStructure>
 
       <section className='section hero dark'>
         <div className='wrapper full-h'>
@@ -19,7 +18,7 @@ export function HomePage() {
               <div className='home-card header' style={{gridColumn: "1/13", gridRow: "1/2"}}>
                 <h1 className='heading bold' data-fitty data-text="trim"
                 style={{ whiteSpace:"nowrap", display:"inline-block", width: "auto", maxWidth: "100%"}}>
-                  Site Coming Soon
+                  Site Coming Soon.
                 </h1>
               </div>
               
@@ -54,7 +53,6 @@ export function HomePage() {
         </div>
       </section>
 
-    </PageStructure>
 
 
   )

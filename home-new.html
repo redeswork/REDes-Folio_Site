@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>redes-folio-site</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script>document.body.setAttribute('data-client', 're-design')</script>
+  <body data-client="re-design">
+      <div class="smooth-wrapper">
+        <div class="smooth-content">
+            <div class="barba-wrapper" data-barba="wrapper">
+                <div class="barba-container" data-barba="container" data-page="home-new">
+                    <div id="root"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script type="module" src="/src/pages/homeNew/HomeNewRender.tsx"></script>
     <script type="module" src="https://re-codebase.pages.dev/entry.js"></script>
   </body>
