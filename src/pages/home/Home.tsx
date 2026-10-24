@@ -31,9 +31,9 @@ export function HomePage() {
 
               <div className='home-card info'>
 
-                <Button link="/home-new" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} rotateIcon={180} rotateLargeIcon={180}/>
+                <Button link="/home-new" text="Test Transition" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
                 
-                <h3 className='heading bold'>
+                <h3 className='heading bold' style={{marginTop: "2rem"}}>
                   Robbie Eason
                 </h3>              
                 <h3 className='heading'>
