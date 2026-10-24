@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './Home.scss'
 import { PageStructure } from '../../components/pageStructure'
 
@@ -6,7 +5,6 @@ import { Button } from '../../components/button'
 
 export function HomePage() {
 
-  const [count, setCount] = useState(0)
 
   return (
 
