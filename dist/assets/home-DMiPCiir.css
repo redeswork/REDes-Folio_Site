@@ -1,1 +1,0 @@
-.home-card{flex-direction:column;width:100%;display:flex}.home-card.brand{grid-area:2/1/3/7;justify-content:end}@media (width<=991px){.home-card.brand{grid-area:3/1/4/13}}.home-card.info{grid-area:2/7/3/13;justify-content:end;align-items:start}@media (width<=991px){.home-card.info{grid-area:2/1/3/13}}
