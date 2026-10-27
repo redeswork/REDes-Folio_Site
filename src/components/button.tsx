@@ -1,4 +1,5 @@
 import { icons } from "./icons/@iconMap";
+import { Link } from "react-router";
 
 export function Button({
     anim,
@@ -6,9 +7,14 @@ export function Button({
     animOrigin,
     animScale,
     splitType = "chars",
+
+    handleClick,
+
+    variant = "filled-border",
     text = "This is a button",
     textColour = "var(--colour-dark)",
     textColourTarget = "var(--colour-light)",
+    textSize = "var(--text-p)",
 
     enableBg = true,
     bgColour = "var(--colour-light-mid)",
@@ -31,7 +37,7 @@ export function Button({
     largeIconBgColourTarget = "var(--colour-cta)",
     enableDot = false,
     dotColour = "var(--colour-cta)",
-    link = "/",
+    link = "",
     transitionKey = "",
 }: {
     anim?: string;
@@ -39,9 +45,16 @@ export function Button({
     animOrigin?: string;
     animScale?: number;
     splitType?: string;
+
+    variant?: string;
+
+    handleClick?: () => void;
+
     text?: string;
     textColour?: string;
     textColourTarget?: string;
+    textSize?: string;
+
     enableBg?: boolean;
     bgColour?: string;
     bgColourTarget?: string;
@@ -66,9 +79,12 @@ export function Button({
     const Icon = icons[icon];
     const LargeIcon = icons[largeIcon];
 
+
+
+
     return (
         <div
-            className="button"
+            className={`button ${variant === "underlined" ? "underlined" : ""}`}
             data-anim={anim}
             data-anim-duration={animDuration}
             data-anim-origin={animOrigin}
@@ -83,6 +99,8 @@ export function Button({
             data-largeiconcolourtarget={largeIconColourTarget}
             data-largeiconbgcolour={largeIconBgColour}
             data-largeiconbgcolourtarget={largeIconBgColourTarget}
+
+            onClick={handleClick}
         >
             {/* LARGE ICON */}
             {enableLargeIcon && (
@@ -137,6 +155,7 @@ export function Button({
             <div
                 className="button-text-wrap"
                 data-anim="textwrap"
+                style={{fontSize: textSize}}
             >
                 <p
                     className="button-text"
@@ -204,11 +223,15 @@ export function Button({
             )}
 
             {/* LINK */}
-            <a
+
+            {link && (
+
+                <Link
                 className="button-link"
-                href={link}
+                to={link}
                 data-transition={transitionKey}
-            />
+                />
+            )}
         </div>
     );
 }

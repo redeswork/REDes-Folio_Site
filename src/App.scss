@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700&display=swap');
+@import url('href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* ========================================
    BREAKPOINT VARIABLES
@@ -91,8 +92,8 @@ $mobile: 479px;
 body {
   font-size: 16px;
   margin: 0;
-  font-family: Inter Tight, sans-serif;
-  font-weight: 500;
+  font-family: Inter Tight, monospace;
+  font-weight: 300;
   line-height: 1em;
 }
 
@@ -118,7 +119,12 @@ body {
   padding-inline: 0;
   height: auto;
   width: auto;
-  font-family: Inter Tight, sans-serif;
+
+  font-family: Inter Tight, monospace;
+  font-weight: 300;
+
+
+  text-transform: uppercase;
 
   *not:svg {
     width: 100%;
@@ -138,12 +144,46 @@ a {
     }
 }
 
+h1 {
+  font-weight: var(--text-h1);
+}
+
+h2 {
+  font-weight: var(--text-h2);
+}
+
+h3 {
+  font-weight: var(--text-h3);
+}
+
+h4 {
+  font-weight: var(--text-h4);
+}
+
+h5 {
+  font-weight: var(--text-h5);
+}
+
+h6 {
+  font-weight: var(--text-h6);
+}
+
+p {
+  font-weight: var(--text-p);
+}
+
+
 
 .section {
   padding-top: 3rem;
   padding-bottom: 3rem;
 
   background-color: white;
+
+  border-color: var(--colour-cta);
+
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 
 }
 
@@ -160,12 +200,18 @@ a {
 }
 
 .section.hero {
+
+
   width: 100vw;
   height: 100vh;
 
   @include tablet {
     height: 100dvh;
   }
+}
+
+.section.no-padding {
+  padding: 0;
 }
 
 
@@ -175,6 +221,11 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: var(--wrapper-w);
+
+  // border-left-width: 2px;
+  // border-right-width: 2px;
+
+  // border-color: #7531f7;
 
 }
 
@@ -210,6 +261,25 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
+
+  @include tablet{
+
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
+  @include mobile {
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1rem;
+  }
+
+}
+
+.grid.align-bottom {
+
+  align-items: end;
 }
 
 
@@ -233,8 +303,16 @@ a {
   justify-content: end;
 }
 
+.content.align-centre {
+  justify-content: center;
+}
+
 .content.height-auto {
   height: auto;
+}
+
+.content.rem-1 {
+  gap: 1rem;
 }
 
 
@@ -242,8 +320,8 @@ a {
 
 
 .heading {
-  color: var(--colour-dark);
-  font-weight: 500;
+  color: var(--colour-light);
+  font-weight: 300;
 }
 
 .heading.bold {
@@ -256,6 +334,9 @@ a {
 
 
 
+p {
+  color: var(--colour-light);
+}
 
 
 .button {
@@ -279,6 +360,19 @@ a {
   border-color: var(--colour-dark);
 
   font-size: var(--button-font-size);
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.button.underlined {
+
+  padding: 0px;
+  padding-bottom: var(--button-padding-t-b);
+
+  border-width: 0px;
+  border-bottom-width: var(--button-border-w);
+  border-radius: 0px;
 }
 
 .button-text-wrap {
@@ -300,6 +394,7 @@ a {
 .button-text {
 
   width: auto;
+  font-weight: 500;
 
   display: inline-block;
 
@@ -461,4 +556,37 @@ a {
   cursor: pointer;
   
 
+}
+
+
+
+
+
+
+
+
+.react-transition-stage {
+    position: relative;
+}
+
+.react-transition-stage > .barba-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+}
+
+.react-transition-stage > .barba-container:first-child:last-child {
+    position: relative;
+}
+
+
+
+.swiper-slide {
+
+  flex: 0 0 auto;
+  width: 100%;
+
+  @include mobile-landscape{
+    width: 81%;
+  }
 }

@@ -7,6 +7,9 @@
 
     width: 100%;
 
+    color: var(--colour-dark);
+
+
 }
 
 .home-card.brand {
@@ -14,6 +17,8 @@
     grid-row: 2/3;
 
     justify-content: end;
+
+    color: var(--colour-dark);
 
     @include bp.tablet {
         grid-row: 3/4;
@@ -27,6 +32,9 @@
 
     justify-content: end;
     align-items: start;
+
+    color: var(--colour-dark);
+
 
     @include bp.tablet {
         grid-row: 2/3;

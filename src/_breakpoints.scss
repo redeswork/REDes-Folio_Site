@@ -8,7 +8,7 @@ $mobile: 479px;
   }
 }
 
-@mixin mobile-landscape {
+@mixin mobile-l {
   @media (max-width: $mobile-l) {
     @content;
   }

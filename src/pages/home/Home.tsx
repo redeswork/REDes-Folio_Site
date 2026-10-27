@@ -3,8 +3,13 @@ import './Home.scss'
 
 import { Button } from '../../components/button'
 
+import { useEffect } from 'react';
+
 export function HomePage() {
 
+  useEffect(() => {
+    console.log("I'm here and present in the DOM");
+  }, []);
 
   return (
 
@@ -15,28 +20,30 @@ export function HomePage() {
           <div className='card'>
             <div className='grid'>
               
-              <div className='home-card header' style={{gridColumn: "1/13", gridRow: "1/2"}}>
+              <div className='home-card header' style={{gridColumn: "1/13", gridRow: "1/2", color: "var(--colour-dark)"}}>
                 <h1 className='heading bold' data-fitty data-text="trim"
-                style={{ whiteSpace:"nowrap", display:"inline-block", width: "auto", maxWidth: "100%"}}>
+                style={{ whiteSpace:"nowrap", display:"inline-block", width: "auto", maxWidth: "100%", color: "var(--colour-dark)"}}>
                   Site Coming Soon.
                 </h1>
               </div>
               
               
-              <div className='home-card brand' style={{fontSize: "var(--text-h3)"}}>
-                <h1 className='heading bold'>
+              <div className='home-card brand' style={{fontSize: "var(--text-h3)", color: "var(--colour-dark)"}}>
+                <h1 className='heading bold' style={{color: "var(--colour-dark)"}}>
                   RE Design
                 </h1>
               </div>
 
               <div className='home-card info'>
 
-                <Button link="/home-new" text="Test Transition" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
+                <Button link="/home-new" text="/home-new" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
+                <div style={{height: "1rem"}}></div>
+                <Button link="/test-page" text="/test-page" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
                 
-                <h3 className='heading bold' style={{marginTop: "2rem"}}>
+                <h3 className='heading bold' style={{marginTop: "2rem", color: "var(--colour-dark)"}}>
                   Robbie Eason
                 </h3>              
-                <h3 className='heading'>
+                <h3 className='heading' style={{color: "var(--colour-dark)"}}>
                   Webflow Developer
                 </h3>
                 <div className="content vertical left-aligned height-auto" style={{paddingTop:"2rem"}}>

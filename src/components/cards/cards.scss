@@ -1,0 +1,122 @@
+@use "../../breakpoints" as bp;
+
+
+:root {
+
+    --card-padding: 1rem;
+
+    --card-border-w: 1px;
+    --card-border-r: 0.5rem;
+}
+
+.card-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    align-items: stretch;
+
+    @include bp.mobile-l {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: start;
+        gap: 0px;
+    }
+
+}
+
+
+.card {
+
+    width: 100%;
+
+    gap: 1rem;
+
+    position: relative;
+
+    padding: var(--card-padding);
+
+    border-width: var(--card-border-w);
+    border-color: var(--colour-cta);
+
+    @include bp.mobile-l {
+        flex: 0 0 auto;
+    }
+
+
+}
+
+
+.card-link {
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 50;
+
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.card-heading {
+
+    font-size: var(--text-h4);
+    font-weight: 500;
+}
+
+.card-copy {
+
+    font-size: var(--text-p);
+    font-weight: 400;
+
+    line-height: 1.25em;
+
+    color: var(--colour-dark);
+
+    transition: height 0.3s;
+
+    interpolate-size:allow-keywords;
+}
+
+
+.card-img-wrap {
+
+    width: 100%;
+
+    aspect-ratio: 4/3;
+
+}
+
+.card-img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.card-content {
+
+    display: flex;
+
+    flex-direction: column;
+    
+    align-items: start;
+    width: 100%;
+    
+    gap: 1rem;
+}
