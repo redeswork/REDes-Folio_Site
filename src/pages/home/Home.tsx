@@ -36,7 +36,7 @@ export function HomePage() {
 
               <div className='home-card info'>
 
-                <Button link="/home-new" text="/home-new" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
+                <Button link="/home-dev" text="/home-dev" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
                 <div style={{height: "1rem"}}></div>
                 <Button link="/test-page" text="/test-page" anim="splitSwap,iconSwap,colourChange" enableLargeIcon={true} enableIcon={false} rotateIcon={180} rotateLargeIcon={180}/>
                 

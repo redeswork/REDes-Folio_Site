@@ -5,6 +5,6 @@ import { TestPage } from "./testPage/TestPage";
 
 export const pages = {
     home: HomePage,
-    "home-new": HomeNew,
+    "home-dev": HomeNew,
     "test-page": TestPage
 };
