@@ -197,7 +197,7 @@ p {
   min-height: 100vh;
 
   @include tablet {
-    height: 100dvh;
+    height: 100svh;
   }
 }
 
@@ -208,7 +208,7 @@ p {
   height: 100vh;
 
   @include tablet {
-    height: 100dvh;
+    height: 100svh;
   }
 }
 
