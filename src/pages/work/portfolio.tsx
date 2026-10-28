@@ -18,12 +18,12 @@ export function Work() {
                 ></HeroHeader>
 
 
-                    <div className="grid" style={{marginTop: "2rem"}}>
+                <div className="grid" style={{marginTop: "2rem"}}>
 
-                            <div style={{gridColumn: "span 3"}}>
-                                <Button text="Websites" link="/work/websites" anim="colourChange" rotateIcon={180}/>
-                            </div>
-                    </div>
+                        <div style={{gridColumn: "span 3"}}>
+                            <Button text="Websites" link="/work/websites" anim="colourChange" rotateIcon={180}/>
+                        </div>
+                </div>
 
             </Section>
         </>

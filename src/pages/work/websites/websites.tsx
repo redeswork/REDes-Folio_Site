@@ -7,7 +7,7 @@ export function Websites() {
 
 
     return (
-        <Section classes="light min-100" wrapperClasses="full-h">
+        <Section classes="light min-100">
 
             <HeroHeader
             variant="dark"
@@ -16,13 +16,13 @@ export function Websites() {
             ></HeroHeader>
 
 
-                <div className="grid" style={{marginTop: "2rem"}}>
-                    {websiteProjects.map((project) => (
-                        <div style={{gridColumn: "span 3"}} key={project.title}>
-                            <Button text={project.title} link={project.slug} anim="colourChange" rotateIcon={180}/>
-                        </div>
-                    ))}
-                </div>
+            <div className="grid" style={{marginTop: "2rem"}}>
+                {websiteProjects.map((project) => (
+                    <div style={{gridColumn: "span 3"}} key={project.title}>
+                        <Button text={project.title} link={project.slug} anim="colourChange" rotateIcon={180}/>
+                    </div>
+                ))}
+            </div>
 
 
 
