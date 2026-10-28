@@ -22,7 +22,7 @@ export function WebsiteProject() {
     return (
         <main className="website-project">
 
-            <Section classes="light hero" wrapperClasses="full-h">
+            <Section classes="light hero min-100" wrapperClasses="full-h">
 
                 <HeroHeader
                 variant="dark"
