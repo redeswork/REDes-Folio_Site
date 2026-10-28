@@ -38,7 +38,7 @@ export function Button({
     enableDot = false,
     dotColour = "var(--colour-cta)",
     link = "",
-    transitionKey = "",
+    transitionKey = "swipe-between",
 }: {
     anim?: string;
     animDuration?: number;

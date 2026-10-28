@@ -1,0 +1,33 @@
+import { Section } from "../../components/structure/Section"
+import { HeroHeader } from "../../components/structure/HeroHeader"
+import { Button } from "../../components/button"
+
+
+export function Work() {
+
+
+    return (
+
+        <>
+            <Section classes="light min-100">
+
+                <HeroHeader
+                variant="dark"
+                heroHeading="Work"
+                heroCopy="A selection of bespoke website design and development projects, from custom Webflow websites to responsive digital experiences for businesses, creative professionals and entertainment clients."
+                ></HeroHeader>
+
+
+                    <div className="grid" style={{marginTop: "2rem"}}>
+
+                            <div style={{gridColumn: "span 3"}}>
+                                <Button text="Websites" link="/work/websites" anim="colourChange" rotateIcon={180}/>
+                            </div>
+                    </div>
+
+            </Section>
+        </>
+
+        
+    )
+}

@@ -9,17 +9,32 @@ import {
 import "./App.scss";
 
 import { pages } from "./pages/pageIndex";
+import { WebsiteProject } from "./pages/work/websites/websiteTemplate";
+
 
 const routes = [
-    ...Object.entries(pages).map(([pageName, Page]) => ({
-        path: pageName === "home" ? "/" : `/${pageName}`,
-        element: <Page />,
-    })),
+    ...Object.entries(pages)
+        .filter(([path]) => !path.startsWith("/work/websites/"))
+        .map(([path, page]) => {
+            const Page = page.component;
+
+            return {
+                path,
+                element: <Page />,
+            };
+        }),
+
+    {
+        path: "/work/websites/:slug",
+        element: <WebsiteProject />,
+    },
+
     {
         path: "*",
         element: <Navigate to="/" replace />,
     },
 ];
+
 
 type TransitionRouterProps = {
     routes: typeof routes;

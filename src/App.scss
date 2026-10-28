@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 
@@ -52,16 +55,19 @@ $mobile: 479px;
 
 
   /* TEXT VARS */
-  --text-h0: clamp(1.9956rem, 1.0193rem + 4.1657vw, 4.7684rem);
-  --text-h1: clamp(1.7739rem, 1.2785rem + 2.1135vw, 3.8147rem);
-  --text-h2: clamp(1.5768rem, 1.2188rem + 1.5275vw, 3.0518rem);
-  --text-h3: clamp(1.4016rem, 1.1492rem + 1.0768vw, 2.4414rem);
-  --text-h4: clamp(1.2458rem, 1.0742rem + 0.7325vw, 1.9531rem);
-  --text-h5: clamp(1.1074rem, 0.997rem + 0.4713vw, 1.5625rem);
-  --text-h6: clamp(0.9844rem, 0.9199rem + 0.2751vw, 1.25rem);
-  --text-p: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem);
-  --text-p-small: clamp(0.7778rem, 0.77rem + 0.0334vw, 0.8rem);
-
+  // 14px @375 @1.125 — 18px @1440 @1.25
+  --text-p-small: clamp(0.7778rem, 0.7347rem + 0.1836vw, 0.9rem);
+  --text-p: clamp(0.875rem, 0.787rem + 0.3756vw, 1.125rem);
+  --text-h6: clamp(0.9844rem, 0.8358rem + 0.6338vw, 1.4063rem);
+  --text-h5: clamp(1.1074rem, 0.8784rem + 0.9771vw, 1.7578rem);
+  --text-h4: clamp(1.2458rem, 0.9108rem + 1.4294vw, 2.1973rem);
+  --text-h3: clamp(1.4016rem, 0.928rem + 2.0207vw, 2.7466rem);
+  --text-h2: clamp(1.5768rem, 0.9231rem + 2.789vw, 3.4332rem);
+  --text-h1: clamp(1.7739rem, 0.8874rem + 3.7824vw, 4.2915rem);
+  --text-h0: clamp(1.9956rem, 0.8094rem + 5.0611vw, 5.3644rem);
+  --text-h-1: clamp(2.2451rem, 0.6745rem + 6.7012vw, 6.7055rem);
+  --text-h-2: clamp(2.5257rem, 0.4636rem + 8.7981vw, 8.3819rem);
+  --text-h-3: clamp(2.8414rem, 0.1527rem + 11.4719vw, 10.4774rem);
 
   /* WRAPPER VARS */
   --wrapper-w: min(90vw, clamp(337.5px, calc(78.815534vw + 41.941748px), 1555.2px));
@@ -72,7 +78,7 @@ $mobile: 479px;
   --colour-dark: #1f1f1f;
   --colour-light: #f3f3f3;
   --colour-light-mid: #cecece;
-  --colour-cta: #7531f7;
+  --colour-cta: #8A38F5;
 
 
 
@@ -121,11 +127,11 @@ body {
   height: auto;
   width: auto;
 
-  font-family: Inter Tight, monospace;
+  font-family: Inter Tight, Arial, sans-serif;
   font-weight: 300;
 
 
-  text-transform: uppercase;
+  // text-transform: uppercase;
 
 }
 
@@ -174,7 +180,20 @@ p {
   font-weight: var(--text-p);
 }
 
+.page-content {
+  position: relative;
+  z-index: 10;
+}
 
+.page-bg {
+  position: absolute;
+  inset: 0%;
+  z-index: -1;
+}
+
+.page-bg.dark {
+  background-color: var(--colour-dark);
+}
 
 .section {
   padding-top: 3rem;
@@ -184,14 +203,19 @@ p {
 
   border-color: var(--colour-cta);
 
-  border-top-width: 1px;
+  // border-top-width: 1px;
   border-bottom-width: 1px;
 
+  &.dark {
+    background-color: var(--colour-dark);
+  }
+
+  &.light {
+    background-color: var(--colour-light);
+  }
+
 }
 
-.section.dark {
-  background-color: var(--colour-dark);
-}
 
 .section.min-100 {
   min-height: 100vh;
@@ -561,7 +585,22 @@ p {
 }
 
 
+.intext-link {
 
+  color: #8A38F5;
+  transition: color 0.3s, text-decoration 0.3s, text-decoration-color 0.3s;
+
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-decoration-color: #8A38F500;
+  text-underline-offset: 0.5em;
+  cursor: pointer;
+}
+
+.intext-link:hover {
+  color: #8A38F5cc;
+  text-decoration-color: #8A38F5;
+}
 
 
 
