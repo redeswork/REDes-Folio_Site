@@ -25,9 +25,12 @@ function mountPage(container: HTMLElement) {
     }
 
     const pageName = barbaContainer.dataset.page;
-    const Page = pageName
+
+    const page = pageName
         ? pages[pageName as keyof typeof pages]
         : undefined;
+
+    const Page = page?.component;
 
     const rootElement =
         barbaContainer.querySelector<HTMLElement>("#root");
