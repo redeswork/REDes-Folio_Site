@@ -1,13 +1,14 @@
 import { Section } from "../../../components/structure/Section"
-import { HeroHeader } from "../../../components/structure/HeroHeader"
+import { HeroHeader } from "../../../components/structure/headers/HeroHeader"
 import { websiteProjects } from "./projects/websiteData"
-import { Button } from "../../../components/button"
+import { Button } from "../../../components/button/button"
 
 export function Websites() {
 
 
     return (
-        <Section classes="light min-100">
+        <>
+        <Section classes="light min-100 top">
 
             <HeroHeader
             variant="dark"
@@ -17,6 +18,7 @@ export function Websites() {
 
 
             <div className="grid" style={{marginTop: "2rem"}}>
+
                 {websiteProjects.map((project) => (
                     <div style={{gridColumn: "span 3"}} key={project.title}>
                         <Button text={project.title} link={project.slug} anim="colourChange" rotateIcon={180}/>
@@ -27,5 +29,6 @@ export function Websites() {
 
 
         </Section>
+        </>
     )
 }

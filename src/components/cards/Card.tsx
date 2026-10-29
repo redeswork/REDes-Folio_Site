@@ -1,4 +1,4 @@
-import { Button } from '../button'
+import { Button } from '../button/button'
 import './cards.scss'
 import { useNavigate } from 'react-router'
 import { truncateText } from '../../function/truncateText'

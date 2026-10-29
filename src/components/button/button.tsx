@@ -1,5 +1,8 @@
-import { icons } from "./icons/@iconMap";
+import { icons } from "../icons/@iconMap";
 import { Link } from "react-router";
+
+import './button.scss'
+
 
 export function Button({
     anim,
@@ -15,6 +18,10 @@ export function Button({
     textColour = "var(--colour-dark)",
     textColourTarget = "var(--colour-light)",
     textSize = "var(--text-p)",
+    textWeightChange = "900",
+
+    borderColour = "",
+    borderColourChange = "",
 
     enableBg = true,
     bgColour = "var(--colour-light-mid)",
@@ -54,6 +61,10 @@ export function Button({
     textColour?: string;
     textColourTarget?: string;
     textSize?: string;
+    textWeightChange?: string;
+
+    borderColour?: string;
+    borderColourChange?: string;
 
     enableBg?: boolean;
     bgColour?: string;
@@ -89,16 +100,20 @@ export function Button({
             data-anim-duration={animDuration}
             data-anim-origin={animOrigin}
             data-anim-scale={animScale}
+
             data-split-type={splitType}
-            data-textcolour={textColour}
+            
             data-textcolourchange={textColourTarget}
-            data-bgcolour={bgColour}
+            data-textweightchange={textWeightChange}
+
+            data-bordercolourchange={borderColourChange}
+            
             data-bgcolourchange={bgColourTarget}
-            data-iconcolour={iconColour}
-            data-largeiconcolour={largeIconColour}
+            
             data-largeiconcolourtarget={largeIconColourTarget}
-            data-largeiconbgcolour={largeIconBgColour}
             data-largeiconbgcolourtarget={largeIconBgColourTarget}
+            
+            style={{ borderColor: borderColour }}
 
             onClick={handleClick}
         >

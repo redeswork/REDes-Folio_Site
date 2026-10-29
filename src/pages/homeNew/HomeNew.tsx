@@ -1,9 +1,11 @@
 // import { PageStructure } from "../../components/pageStructure";
 
-import { Button } from "../../components/button";
-import { CardGrid } from "../../components/cards/CardGrid";
-import { HeaderBlock } from "../../components/structure/Header";
-import { HeroHeader } from "../../components/structure/HeroHeader";
+import { ButtonCta } from "../../components/button/buttonCta";
+// import { ButtonPrimary } from "../../components/button/buttonPrimary";
+import { ButtonSecondary } from "../../components/button/buttonSecondary";
+// import { CardGrid } from "../../components/cards/CardGrid";
+// import { HeaderBlock } from "../../components/structure/headers/Header";
+import { HeroHeader } from "../../components/structure/headers/HeroHeader";
 import { Section } from "../../components/structure/Section";
 
 export function HomeNew() {
@@ -11,54 +13,25 @@ export function HomeNew() {
 
     return (
 
-        // <PageStructure>
         <>
-            <div className="page-content">
-                <section className="section dark hero">
-                    <div className="wrapper full-h">
+            <Section classes="top hero light" wrapperClasses="full-h">
+                <HeroHeader
+                heroHeading="RE: DESIGN"
+                heroSubHeading="Freelance Website Developer"
+                heroCopy=" Bespoke websites for theatre and entertainment businesses."
+                variant="dark"
+                breadcrumb={false}
+                >
 
-
-                        {/* HERO LOCKUP */}
-                        <div className="content vertical align-centre rem-1">
-
-                            <h1
-                            className="hero-heading"
-                            style={{color: "var(--colour-light)"}}>
-                                RE Design
-                            </h1>
-
-                            <h2 style={{color: "var(--colour-light)"}}> Webflow Developer </h2>
-
-                            <p style={{}}>Building bespoke websites catering to live experiences.</p>
-
-                            <Button link="/" text="Test Transition" transitionKey="swipe-between" anim="splitSwap,iconSwap,colourChange" enableIcon={false} enableLargeIcon={true} rotateIcon={180} rotateLargeIcon={180}/>
-
-                        </div>
-                    
+                    <div className="button-wrap">
+                        <ButtonCta text="See Work"></ButtonCta>
+                        <ButtonSecondary text="Get in Touch"></ButtonSecondary>
                     </div>
-                </section>
 
-                <Section classes="dark hero" wrapperClasses="full-h">
+                </HeroHeader>
 
-                    <HeroHeader></HeroHeader>
 
-                </Section>
-
-                <Section classes="dark">
-                    <div className="content vertical">
-
-                        <HeaderBlock direction="horizontal"></HeaderBlock>
-
-                    </div>
-                </Section>
-
-                <Section classes="dark">
-
-                    <CardGrid></CardGrid>
-                    
-                </Section>
-            </div>
-            <div className="page-bg dark"></div>
+            </Section>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import './Home.scss'
 // import { PageStructure } from '../../components/pageStructure'
 
-import { Button } from '../../components/button'
+import { Button } from '../../components/button/button'
 
 import { useEffect } from 'react';
 
@@ -15,7 +15,7 @@ export function HomePage() {
 
     <>
       <div className='page-content'>
-        <section className='section hero dark'>
+        <section className='section hero dark top'>
           <div className='wrapper full-h'>
 
             <div className='card'>

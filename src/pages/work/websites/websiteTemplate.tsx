@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { websiteProjects } from "./projects/websiteData";
 import { Section } from "../../../components/structure/Section";
-import { HeroHeader } from "../../../components/structure/HeroHeader";
+import { HeroHeader } from "../../../components/structure/headers/HeroHeader";
 
 export function WebsiteProject() {
     const { slug } = useParams();
@@ -15,20 +15,27 @@ export function WebsiteProject() {
         (project) => project.slug === slug
     );
 
-    if (!project) {
-        return <h1>Project not found</h1>;
-    }
+
 
     return (
         <main className="website-project">
 
-            <Section classes="light min-100">
+            <Section classes="light min-100 top">
 
-                <HeroHeader
-                variant="dark"
-                heroHeading={project.title}
-                heroCopy={project.client}
-                ></HeroHeader>
+                {!project ? (
+
+                    <h1>Project not found</h1>
+
+                ) : (
+
+                    <HeroHeader
+                    variant="dark"
+                    heroHeading={project.title}
+                    heroCopy={project.client}
+                    ></HeroHeader>
+                    
+                )}
+
 
             </Section>
 

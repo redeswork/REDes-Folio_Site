@@ -1,6 +1,6 @@
 // import { PageStructure } from "../../components/pageStructure";
 
-import { Button } from "../../components/button";
+import { Button } from "../../components/button/button";
 
 export function TestPage() {
 
@@ -8,7 +8,7 @@ export function TestPage() {
     return (
 
         // <PageStructure>
-            <section className="section dark min-100">
+            <section className="section dark min-100 top">
                 <div className="wrapper">
                     <div className="content vertical">
                         <h1 style={{color: "var(--colour-light)", marginBottom: "2rem"}}>Test Page</h1>

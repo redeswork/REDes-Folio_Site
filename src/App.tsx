@@ -1,3 +1,5 @@
+import { Navbar } from "./components/Navbar";
+
 import * as React from "react";
 import {
     BrowserRouter,
@@ -121,6 +123,7 @@ function AppRoutes() {
 export default function App() {
     return (
         <BrowserRouter>
+            <Navbar />
             <AppRoutes />
         </BrowserRouter>
     );

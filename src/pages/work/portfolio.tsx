@@ -1,6 +1,6 @@
 import { Section } from "../../components/structure/Section"
-import { HeroHeader } from "../../components/structure/HeroHeader"
-import { Button } from "../../components/button"
+import { HeroHeader } from "../../components/structure/headers/HeroHeader"
+import { Button } from "../../components/button/button"
 
 
 export function Work() {
@@ -9,7 +9,7 @@ export function Work() {
     return (
 
         <>
-            <Section classes="light min-100">
+            <Section classes="light min-100 top">
 
                 <HeroHeader
                 variant="dark"
