@@ -1,10 +1,7 @@
 // import { PageStructure } from "../../components/pageStructure";
 
 import { ButtonCta } from "../../components/button/buttonCta";
-// import { ButtonPrimary } from "../../components/button/buttonPrimary";
 import { ButtonSecondary } from "../../components/button/buttonSecondary";
-// import { CardGrid } from "../../components/cards/CardGrid";
-// import { HeaderBlock } from "../../components/structure/headers/Header";
 import { HeroHeader } from "../../components/structure/headers/HeroHeader";
 import { Section } from "../../components/structure/Section";
 
