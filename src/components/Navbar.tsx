@@ -1,13 +1,14 @@
 import './navbar.scss'
 import { Brandmark } from './brand/brandmark'
 import { Link } from 'react-router'
+import { createPortal } from 'react-dom'
 
 
 export function Navbar() {
 
 
 
-    return (
+    return createPortal(
 
         <>
             <header className="nav">
@@ -31,7 +32,8 @@ export function Navbar() {
 
                 <div className='nav-bg'></div>
             </header>
-        </>
+        </>,
+        document.body
 
     )
 }

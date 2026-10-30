@@ -5,7 +5,7 @@ import { pages } from "../pages/pageIndex";
 export function Breadcrumbs({
     variant = "dark",
     includeHome = true,
-    transitionKey = "mask-1"
+    transitionKey = "vertical-mask-under"
 }: {
     variant?: string;
     includeHome?: boolean;
@@ -16,7 +16,7 @@ export function Breadcrumbs({
 
 
     const textColours: Record<string, string> = {
-        dark: "var(--colour-dark)",
+        dark: "var(--colour-cta-dark)",
         light: "var(--colour-light)"
     };
 

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import './pagestructure.scss'
+import { Footer } from "./Footer";
 
 export function PageStructure(
     { 
@@ -19,7 +20,7 @@ export function PageStructure(
                 {children}
             </div>
             <div className={`page-bg ${bgClass}`}></div>
-        
+            <Footer />
         </>
     )
 }

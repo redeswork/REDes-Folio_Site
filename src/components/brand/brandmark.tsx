@@ -10,7 +10,7 @@ type BrandmarkType = keyof typeof brandmarks;
 export function Brandmark({ type = "darkKnockout" }: { type?: BrandmarkType }) {
 
     return (
-        <div className="brand-wrap" style={{ height: "61.8%" }}>
+        <div className="brand-wrap" style={{ height: "100%" }}>
             <img
                 src={brandmarks[type]}
                 alt="RE Design"

@@ -100,9 +100,11 @@ $mobile: 479px;
   --colour-light-mid: #cecece;
   --colour-light-transparent: #f3f3f300;
 
-  --colour-cta: #8A38F5;
-  --colour-cta-mid: #906cc0;
-  --colour-cta-transparent: #8a38f500;
+  --colour-cta: #9340FF;
+  --colour-cta-mid: #a966ff;
+
+  --colour-cta-dark: #3b1a66;
+  --colour-cta-transparent: #9340FF00;
 
 
 
@@ -410,8 +412,10 @@ p {
 
 .intext-link {
 
-  color: #8A38F5;
+  color: var(--colour-cta);
   transition: color 0.3s, text-decoration 0.3s, text-decoration-color 0.3s;
+
+  font-weight: 400;
 
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
@@ -421,8 +425,8 @@ p {
 }
 
 .intext-link:hover {
-  color: #8A38F5cc;
-  text-decoration-color: #8A38F5;
+  color: var(--colour-cta-mid);
+  text-decoration-color: var(--colour-cta-mid);
 }
 
 

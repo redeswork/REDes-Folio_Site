@@ -1,8 +1,10 @@
 import { Section } from "../../../components/structure/Section"
 import { HeroHeader } from "../../../components/structure/headers/HeroHeader"
 import { websiteProjects } from "./projects/websiteData"
-import { Button } from "../../../components/button/button"
+// import { Button } from "../../../components/button/button"
 import { PageStructure } from "../../../components/structure/PageStructure"
+import { WorkCard } from "../../../components/cards/WorkCard"
+
 
 export function Websites() {
 
@@ -21,11 +23,14 @@ export function Websites() {
 
                 <div className="grid" style={{marginTop: "2rem"}}>
 
-                    {websiteProjects.map((project) => (
-                        <div style={{gridColumn: "span 3"}} key={project.title}>
-                            <Button text={project.title} link={project.slug} anim="colourChange" rotateIcon={180}/>
-                        </div>
-                    ))}
+                    <div className="content vertical" style={{gridColumn: "1/13"}}>
+
+                        {websiteProjects.map((project) => (
+                            
+                            <WorkCard title={project.title}></WorkCard>
+                        ))}
+
+                    </div>
                 </div>
             </Section>
         </PageStructure>

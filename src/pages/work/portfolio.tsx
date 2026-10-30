@@ -4,6 +4,7 @@ import { Button } from "../../components/button/button"
 import { PageStructure } from "../../components/structure/PageStructure"
 
 
+
 export function Work() {
 
 
@@ -23,7 +24,7 @@ export function Work() {
                 <div className="grid" style={{marginTop: "2rem"}}>
 
                         <div style={{gridColumn: "span 3"}}>
-                            <Button text="Websites" link="/work/websites" anim="colourChange" rotateIcon={180}/>
+                            <Button text="Websites" link="/work/websites" transitionKey="venitian-vert" anim="colourChange" rotateIcon={180}/>
                         </div>
                 </div>
 
