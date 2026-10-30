@@ -13,7 +13,7 @@ export function TransitionMask() {
                 <div className="wrapper full-h">
                     <div className="content align-centre align-centre justify-centre">
                         <div className="mask-inner">
-                            <Brandmark></Brandmark>
+                            <Brandmark type="lightKnockout"></Brandmark>
                             <p className="mask-text">RE DESIGN</p>
 
                         </div>

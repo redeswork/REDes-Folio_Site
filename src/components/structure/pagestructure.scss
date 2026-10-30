@@ -37,7 +37,7 @@
 
   position: fixed;
 
-  background-color: var(--colour-dark);
+  background-color: var(--colour-dark) !important;
 
   z-index: 10000;
 
@@ -58,7 +58,7 @@
 
   position: fixed;
 
-  background-color: var(--colour-light);
+  background-color: var(--colour-light) !important;
 
   z-index: 9950;
 }
@@ -78,7 +78,7 @@
 }
 
 .mask-text {
-  color: var(--colour-dark);
+  color: var(--colour-light);
   align-self: center;
 
   font-size: var(--text-h1);
