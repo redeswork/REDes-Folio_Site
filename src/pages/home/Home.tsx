@@ -3,20 +3,16 @@ import './Home.scss'
 
 import { Button } from '../../components/button/button'
 
-import { useEffect } from 'react';
 
 export function HomePage() {
 
-  useEffect(() => {
-    console.log("I'm here and present in the DOM");
-  }, []);
+
 
   return (
 
     <>
       <div className='page-content'>
-        <section className='section hero dark top'>
-          <div className='wrapper full-h'>
+        <section className='section hero home-placeholder dark top'>
 
             <div className='card'>
               <div className='grid'>
@@ -58,7 +54,6 @@ export function HomePage() {
               </div>
 
             </div>
-          </div>
         </section>
       </div>
       <div className='page-bg dark'></div>

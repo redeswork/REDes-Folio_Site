@@ -3,6 +3,7 @@
 import { ButtonCta } from "../../components/button/buttonCta";
 import { ButtonSecondary } from "../../components/button/buttonSecondary";
 import { HeroHeader } from "../../components/structure/headers/HeroHeader";
+import { PageStructure } from "../../components/structure/PageStructure";
 import { Section } from "../../components/structure/Section";
 
 export function HomeNew() {
@@ -11,6 +12,7 @@ export function HomeNew() {
     return (
 
         <>
+        <PageStructure bgClass="light">
             <Section classes="top hero light" wrapperClasses="full-h">
                 <HeroHeader
                 heroHeading="RE: DESIGN"
@@ -21,7 +23,7 @@ export function HomeNew() {
                 >
 
                     <div className="button-wrap">
-                        <ButtonCta text="See Work"></ButtonCta>
+                        <ButtonCta text="See Work" link="/work" transitionKey="mask-1"></ButtonCta>
                         <ButtonSecondary text="Get in Touch"></ButtonSecondary>
                     </div>
 
@@ -29,6 +31,7 @@ export function HomeNew() {
 
 
             </Section>
+        </PageStructure>
         </>
     )
 }

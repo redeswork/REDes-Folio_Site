@@ -12,6 +12,7 @@ import "./App.scss";
 
 import { pages } from "./pages/pageIndex";
 import { WebsiteProject } from "./pages/work/websites/websiteTemplate";
+import { TransitionMask } from "./components/global/TransitionMask";
 
 
 const routes = [
@@ -123,6 +124,7 @@ function AppRoutes() {
 export default function App() {
     return (
         <BrowserRouter>
+            <TransitionMask />
             <Navbar />
             <AppRoutes />
         </BrowserRouter>

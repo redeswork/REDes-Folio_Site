@@ -1,6 +1,7 @@
 import { Section } from "../../components/structure/Section"
 import { HeroHeader } from "../../components/structure/headers/HeroHeader"
 import { Button } from "../../components/button/button"
+import { PageStructure } from "../../components/structure/PageStructure"
 
 
 export function Work() {
@@ -9,6 +10,7 @@ export function Work() {
     return (
 
         <>
+        <PageStructure bgClass="light">
             <Section classes="light min-100 top">
 
                 <HeroHeader
@@ -26,6 +28,7 @@ export function Work() {
                 </div>
 
             </Section>
+        </PageStructure>
         </>
 
         

@@ -5,11 +5,13 @@ import { Button } from "./button";
 export function ButtonSecondary(
     {
         transitionKey = "swipe-between",
-        text = "Button Text"
+        text = "Button Text",
+        link = ""
      }:
     {
         transitionKey?: string;
         text?: string;
+        link?: string;
     }
 ) {
 
@@ -29,6 +31,8 @@ export function ButtonSecondary(
         rotateIcon={180}
         
         transitionKey={transitionKey}
+
+        link={link}
 
         text={text}
         >

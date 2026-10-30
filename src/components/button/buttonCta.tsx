@@ -5,11 +5,13 @@ import { Button } from "./button";
 export function ButtonCta(
     {
         transitionKey = "swipe-between",
-        text = "Button Text"
+        text = "Button Text",
+        link = ""
      }:
     {
         transitionKey?: string;
         text?: string;
+        link?: string;
     }
 ) {
 
@@ -22,16 +24,16 @@ export function ButtonCta(
         bgColour="var(--colour-cta)"
         bgColourTarget="var(--colour-cta-mid)"
         textColour="var(--colour-light)"
-        textColourTarget="var(--colour-light)"
+        // textColourTarget="var(--colour-light)"
 
         borderColour="var(--colour-cta)"
         borderColourChange="var(--colour-cta-mid)"
 
         rotateIcon={180}
-
-        textWeightChange="900"
         
         transitionKey={transitionKey}
+
+        link={link}
 
         text={text}
         >

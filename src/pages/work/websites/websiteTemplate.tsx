@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { websiteProjects } from "./projects/websiteData";
 import { Section } from "../../../components/structure/Section";
 import { HeroHeader } from "../../../components/structure/headers/HeroHeader";
+import { PageStructure } from "../../../components/structure/PageStructure";
 
 export function WebsiteProject() {
     const { slug } = useParams();
@@ -18,6 +19,8 @@ export function WebsiteProject() {
 
 
     return (
+        <>
+        <PageStructure bgClass="light">
         <main className="website-project">
 
             <Section classes="light min-100 top">
@@ -40,5 +43,7 @@ export function WebsiteProject() {
             </Section>
 
         </main>
+        </PageStructure>
+        </>
     );
 }

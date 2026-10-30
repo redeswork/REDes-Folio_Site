@@ -157,14 +157,17 @@ body {
   width: auto;
 
   font-family: Geist, Arial, sans-serif;
-  font-weight: 300;
 
 
   // text-transform: uppercase;
 
 }
 
-*not:svg {
+*:not(.button, .button *) {
+  font-weight: 300;
+}
+
+* svg {
     width: 100%;
     height: 100%;
 }
@@ -182,24 +185,8 @@ a {
 }
 
 
-/* ========================================
-   MAIN PAGE VARS
-======================================== */
 
-.page-content {
-  position: relative;
-  z-index: 10;
-}
 
-.page-bg {
-  position: absolute;
-  inset: 0%;
-  z-index: -1;
-}
-
-.page-bg.dark {
-  background-color: var(--colour-dark);
-}
 
 
 /* ========================================
@@ -260,6 +247,10 @@ a {
     }
   }
 
+  &.home-placeholder {
+    padding: var(--section-padding);
+  }
+
 }
 
 .section.hero {
@@ -273,6 +264,10 @@ a {
 
   @include tablet {
     height: 100svh;
+  }
+  &.home-placeholder {
+    padding: var(--section-padding);
+    padding-top: calc(var(--nav-h) + var(--section-padding));
   }
 }
 
@@ -356,23 +351,31 @@ a {
   width: 100%;
   height: 100%;
 
+  &.align-top {
+    align-items: start;
+  }
+  &.align-centre {
+    align-items: center;
+  }
+  &.align-end {
+    align-items: end;
+  }
+  &.justify-top {
+    justify-content: start;
+  }
+  &.justify-centre {
+    justify-content: center;
+  }
+  &.justify-end {
+    justify-content: end;
+  }
+
 }
 
 .content.vertical {
   flex-direction: column;
 }
 
-.content.align-bottom {
-  justify-content: end;
-}
-
-.content.align-centre {
-  justify-content: center;
-}
-
-.content.height-auto {
-  height: auto;
-}
 
 .content.rem-1 {
   gap: 1rem;

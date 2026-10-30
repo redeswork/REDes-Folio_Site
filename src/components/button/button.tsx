@@ -18,7 +18,8 @@ export function Button({
     textColour = "var(--colour-dark)",
     textColourTarget = "var(--colour-light)",
     textSize = "var(--text-p)",
-    textWeightChange = "900",
+
+    textWeightChange = "",
 
     borderColour = "",
     borderColourChange = "",
@@ -61,6 +62,7 @@ export function Button({
     textColour?: string;
     textColourTarget?: string;
     textSize?: string;
+
     textWeightChange?: string;
 
     borderColour?: string;
@@ -104,6 +106,7 @@ export function Button({
             data-split-type={splitType}
             
             data-textcolourchange={textColourTarget}
+
             data-textweightchange={textWeightChange}
 
             data-bordercolourchange={borderColourChange}

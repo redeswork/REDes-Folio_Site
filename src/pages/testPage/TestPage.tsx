@@ -1,5 +1,4 @@
-// import { PageStructure } from "../../components/pageStructure";
-
+import { PageStructure } from "../../components/structure/PageStructure";
 import { Button } from "../../components/button/button";
 
 export function TestPage() {
@@ -7,7 +6,7 @@ export function TestPage() {
 
     return (
 
-        // <PageStructure>
+        <PageStructure bgClass="dark">
             <section className="section dark min-100 top">
                 <div className="wrapper">
                     <div className="content vertical">
@@ -16,6 +15,6 @@ export function TestPage() {
                     </div>
                 </div>
             </section>
-        // {/* </PageStructure> */}
+        </PageStructure>
     )
 }
