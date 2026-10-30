@@ -7,20 +7,21 @@ const brandmarks = {
 
 type BrandmarkType = keyof typeof brandmarks;
 
-export function Brandmark({ type = "darkKnockout" }: { type?: BrandmarkType }) {
+export function Brandmark({ type = "darkKnockout", width = "auto", height = "100%" }: { type?: BrandmarkType, width?: string, height?: string }) {
 
     return (
-        <div className="brand-wrap" style={{ height: "100%" }}>
+        // <div style={{ height: "100%" }}>
             <img
                 src={brandmarks[type]}
                 alt="RE Design"
                 style={{
                     display: "block",
-                    height: "100%",
+                    width: width,
+                    height: height,
                     aspectRatio: 1,
                     objectFit: "cover"
                 }}
             />
-        </div>
+        // </div>
     );
 }
