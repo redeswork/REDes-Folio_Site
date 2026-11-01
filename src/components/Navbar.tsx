@@ -1,39 +1,30 @@
 import './navbar.scss'
 import { Brandmark } from './brand/brandmark'
 import { Link } from 'react-router'
-import { createPortal } from 'react-dom'
-
 
 export function Navbar() {
-
-
-
-    return createPortal(
-
-        <>
-            <header className="nav">
-                <div className="nav-wrap">
-                    <div className='nav-content'>
-
-                        <div className='nav-brand'>
-                            <Brandmark />
-                            <text className="nav-brand-text">
-                                RE: Design
-                            </text>
-                        </div>
-
-                        <div className='nav-links'>
-                            <Link className='nav-link' to={"/"}>
-                            <text>Link</text>
-                            </Link>
-                        </div>
+    return (
+        <header className="nav">
+            <div className="nav-wrap">
+                <div className='nav-content'>
+                    <div className='nav-brand'>
+                        <Brandmark />
+                        <span className="nav-brand-text">
+                            RE: Design
+                        </span>
                     </div>
+
+                    <nav className='nav-links' aria-label="Main navigation">
+                        <Link className='nav-link' to="/">
+                            <span>Home</span>
+                        </Link>
+                        <Link className='nav-link' to="/work">
+                            <span>Work</span>
+                        </Link>
+                    </nav>
                 </div>
-
-                <div className='nav-bg'></div>
-            </header>
-        </>,
-        document.body
-
+            </div>
+            <div className='nav-bg'></div>
+        </header>
     )
 }

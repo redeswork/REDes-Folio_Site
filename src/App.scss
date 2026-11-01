@@ -460,3 +460,8 @@ p {
 }
 
 
+
+/* The React root is a hydration boundary, not a layout wrapper. */
+#root {
+  display: contents;
+}

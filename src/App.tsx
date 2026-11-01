@@ -1,9 +1,6 @@
-import { Navbar } from "./components/Navbar";
-
 import * as React from "react";
 import {
     BrowserRouter,
-    Navigate,
     useLocation,
     useRoutes,
 } from "react-router";
@@ -13,7 +10,8 @@ import "./App.scss";
 import { pages } from "./pages/pageIndex";
 import { WebsiteProject } from "./pages/work/websites/websiteTemplate";
 import { TransitionMask } from "./components/global/TransitionMask";
-
+import { Navbar } from "./components/Navbar";
+import { PageMetadata } from "./components/seo/PageMetadata";
 
 const routes = [
     ...Object.entries(pages)
@@ -26,107 +24,159 @@ const routes = [
                 element: <Page />,
             };
         }),
-
     {
         path: "/work/websites/:slug",
         element: <WebsiteProject />,
     },
-
     {
         path: "*",
-        element: <Navigate to="/" replace />,
+        element: (
+            <main className="page-content">
+                <section className="section light min-100 top">
+                    <div className="wrapper">
+                        <h1>Page not found</h1>
+                        <p>The page you're looking for doesn't exist or may have moved.</p>
+                    </div>
+                </section>
+            </main>
+        ),
     },
 ];
-
 
 type TransitionRouterProps = {
     routes: typeof routes;
     config: unknown;
 };
 
+type TransitionRuntime = {
+    createReactTransitionRouter: (options: {
+        React: typeof React;
+        router: {
+            useLocation: typeof useLocation;
+            useRoutes: typeof useRoutes;
+        };
+    }) => React.ComponentType<TransitionRouterProps>;
+    initPage?: () => void;
+};
+
 declare global {
     interface Window {
         __CONFIG__?: unknown;
-        __RE_TRANSITIONS__?: {
-            createReactTransitionRouter: (options: {
-                React: typeof React;
-                router: {
-                    useLocation: typeof useLocation;
-                    useRoutes: typeof useRoutes;
-                };
-            }) => React.ComponentType<TransitionRouterProps>;
-
-            initPage?: () => void;
-        };
+        __RE_TRANSITIONS__?: TransitionRuntime;
     }
 }
 
 function AppRoutes() {
-    const [runtimeReady, setRuntimeReady] = React.useState(
-        Boolean(
-            window.__RE_TRANSITIONS__?.createReactTransitionRouter
-        )
-    );
+    const runtimeAttached = React.useRef(false);
+    const [transitionRuntime, setTransitionRuntime] = React.useState<{
+        Component: React.ComponentType<TransitionRouterProps>;
+        config: unknown;
+    } | null>(null);
 
     React.useEffect(() => {
-        if (runtimeReady) return;
+        let intervalId: number | undefined;
 
-        const checkRuntime = window.setInterval(() => {
-            if (
-                window.__RE_TRANSITIONS__?.createReactTransitionRouter
-            ) {
-                window.clearInterval(checkRuntime);
-                setRuntimeReady(true);
+        const attachRuntime = () => {
+            if (runtimeAttached.current) {
+                return true;
             }
-        }, 50);
 
-        return () => window.clearInterval(checkRuntime);
-    }, [runtimeReady]);
+            const runtime = window.__RE_TRANSITIONS__;
 
-    const TransitionController = React.useMemo(() => {
-        if (!runtimeReady) return null;
+            if (!runtime?.createReactTransitionRouter) {
+                return false;
+            }
 
-        return window.__RE_TRANSITIONS__?.createReactTransitionRouter({
-            React,
-            router: {
-                useLocation,
-                useRoutes,
-            },
-        }) ?? null;
-    }, [runtimeReady]);
+            const Component = runtime.createReactTransitionRouter({
+                React,
+                router: {
+                    useLocation,
+                    useRoutes,
+                },
+            });
+
+            runtimeAttached.current = true;
+            setTransitionRuntime({
+                Component,
+                config: window.__CONFIG__,
+            });
+
+            return true;
+        };
+
+        if (!attachRuntime()) {
+            intervalId = window.setInterval(() => {
+                if (attachRuntime() && intervalId !== undefined) {
+                    window.clearInterval(intervalId);
+                }
+            }, 50);
+        }
+
+        return () => {
+            if (intervalId !== undefined) {
+                window.clearInterval(intervalId);
+            }
+        };
+    }, []);
 
     const initCalled = React.useRef(false);
 
     React.useEffect(() => {
-        if (!runtimeReady || !TransitionController || initCalled.current) {
+        if (!transitionRuntime || initCalled.current) {
             return;
         }
 
-        initCalled.current = true;
+        const frame = window.requestAnimationFrame(() => {
+            if (initCalled.current) {
+                return;
+            }
 
-        requestAnimationFrame(() => {
+            initCalled.current = true;
             window.__RE_TRANSITIONS__?.initPage?.();
         });
-    }, [runtimeReady, TransitionController]);
 
-    if (!runtimeReady || !TransitionController) {
-        return useRoutes(routes);
+        return () => window.cancelAnimationFrame(frame);
+    }, [transitionRuntime]);
+
+    const defaultRouteElement = useRoutes(routes);
+
+    if (!transitionRuntime) {
+        return defaultRouteElement;
     }
+
+    const TransitionController = transitionRuntime.Component;
 
     return (
         <TransitionController
             routes={routes}
-            config={window.__CONFIG__}
+            config={transitionRuntime.config}
         />
+    );
+}
+
+/**
+ * Shared application tree used by both the browser router and the
+ * StaticRouter used during the prerender build.
+ */
+export function AppContent() {
+    return (
+        <>
+            <PageMetadata />
+            <Navbar />
+            <TransitionMask />
+            <div className="smooth-wrapper">
+                <div className="smooth-content">
+                    <AppRoutes />
+                </div>
+            </div>
+        </>
     );
 }
 
 export default function App() {
     return (
         <BrowserRouter>
-            <TransitionMask />
-            <Navbar />
-            <AppRoutes />
+            <AppContent />
         </BrowserRouter>
     );
 }

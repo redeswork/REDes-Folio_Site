@@ -27,7 +27,7 @@ export function Websites() {
 
                         {websiteProjects.map((project) => (
                             
-                            <WorkCard title={project.title}></WorkCard>
+                            <WorkCard key={project.slug} title={project.title} client={project.client} slug={project.slug} />
                         ))}
 
                     </div>

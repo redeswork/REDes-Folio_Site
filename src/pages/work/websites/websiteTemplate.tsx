@@ -7,11 +7,6 @@ import { PageStructure } from "../../../components/structure/PageStructure";
 export function WebsiteProject() {
     const { slug } = useParams();
 
-    const params = useParams();
-
-    console.log("Params:", params);
-    console.log("Projects:", websiteProjects);
-
     const project = websiteProjects.find(
         (project) => project.slug === slug
     );
