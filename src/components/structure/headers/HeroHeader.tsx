@@ -8,7 +8,7 @@ import './heroHeader.scss'
 export function HeroHeader( {
     variant = "light",
     heroHeading = "Hero Heading",
-    heroSubHeading = "Hero subheading",
+    heroSubHeading,
     heroCopy,
     children,
     childrenOverride = false,
@@ -38,13 +38,17 @@ export function HeroHeader( {
                 <>
                     <div className="hero-heading-wrap" style={{gridRow: "1/2"}}>
                         {breadcrumb && ( <Breadcrumbs variant={variant} includeHome={true}/> )}
-                        <h1 className="hero-heading light" style={{maxWidth: "", color: textColours[variant]}}>{heroHeading}</h1>
+                        <h1 className="hero-heading light" data-anim="splitChars" style={{maxWidth: "", color: textColours[variant]}}>{heroHeading}</h1>
                     </div>
 
                     <div className="hero-content" style={{gridColumn: "1/13", gridRow: "2/3"}}>
+
+                        {heroSubHeading && (
                         <h2>
                             {heroSubHeading}
                         </h2>
+                        )}
+
                         <p className="hero-copy align-start" style={{color: textColours[variant]}}>
                             {heroCopy}
                         </p>

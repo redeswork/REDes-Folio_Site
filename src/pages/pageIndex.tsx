@@ -6,6 +6,7 @@ import { Work } from "./work/portfolio";
 import { websiteProjects } from "./work/websites/projects/websiteData";
 import { WebsiteProject } from "./work/websites/websiteTemplate";
 import { Logopage } from "./logo";
+import { About } from "./about/About";
 
 export type PageSeo = {
     title: string;
@@ -20,6 +21,15 @@ export const pages = {
         seo: {
             title: "RE Design | Website Coming Soon",
             description: "RE Design by Robbie Eason, freelance Webflow developer. Website coming soon.",
+        },
+    },
+    "/about": {
+        component: About,
+        label: "About",
+        seo: {
+            title: "About | RE Design",
+            description: "Lorem ipsum dolor.",
+            noIndex: true
         },
     },
     "/test-page": {
