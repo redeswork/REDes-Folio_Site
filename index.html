@@ -1,17 +1,34 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/redeswork/REDes-Assets/95d7cd610e4a02660acc1bfe7ddb83cfd0a8c8cc/REWork_Var01.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RE Design</title>
-  </head>
-  <body data-client="re-design-react">
-    <div id="root"></div>
+    <head>
+        <meta charset="UTF-8" />
 
-    <script type="module">
-      await import("https://re-codebase.pages.dev/entry.js");
-      await import("/src/main.tsx");
-    </script>
-  </body>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="https://raw.githubusercontent.com/redeswork/REDes-Assets/95d7cd610e4a02660acc1bfe7ddb83cfd0a8c8cc/REWork_Var01.svg"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>RE Design</title>
+    </head>
+
+    <body data-client="re-design-react">
+        <div id="root"></div>
+
+        <!-- External codebase loader -->
+        <script
+            type="module"
+            async
+            src="/src/runtime-loader.ts"
+        ></script>
+
+        <!-- React application -->
+        <script
+            type="module"
+            src="/src/main.tsx"
+        ></script>
+    </body>
 </html>

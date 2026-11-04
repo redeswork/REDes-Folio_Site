@@ -3,6 +3,87 @@ import { StrictMode, useEffect } from "react";
 import { renderToString } from "react-dom/server";
 import { Link, StaticRouter, useLocation, useParams, useRoutes } from "react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
+// src/pages/home/Home.tsx
+function HomePage() {
+	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx("div", {
+		className: "page-content",
+		children: /* @__PURE__ */ jsx("section", {
+			className: "section hero home-placeholder dark",
+			children: /* @__PURE__ */ jsx("div", {
+				className: "card",
+				children: /* @__PURE__ */ jsxs("div", {
+					className: "grid",
+					children: [
+						/* @__PURE__ */ jsx("div", {
+							className: "home-card header",
+							style: {
+								gridColumn: "1/13",
+								gridRow: "1/2",
+								color: "var(--colour-dark)"
+							},
+							children: /* @__PURE__ */ jsx("h1", {
+								className: "heading",
+								"data-fitty": true,
+								"data-text": "trim",
+								style: {
+									whiteSpace: "nowrap",
+									display: "inline-block",
+									width: "auto",
+									maxWidth: "100%",
+									color: "var(--colour-dark)",
+									textTransform: "uppercase"
+								},
+								children: "Re: Design"
+							})
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "home-card brand",
+							style: {
+								fontSize: "var(--text-h5)",
+								color: "var(--colour-dark)",
+								textBoxTrim: "trim-both"
+							},
+							children: /* @__PURE__ */ jsx("h1", {
+								className: "heading bold",
+								style: { color: "var(--colour-dark)" },
+								children: "SITE COMING SOON"
+							})
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "home-card info",
+							children: [
+								/* @__PURE__ */ jsx("h3", {
+									className: "heading bold",
+									style: {
+										marginTop: "2rem",
+										color: "var(--colour-dark)"
+									},
+									children: "Robbie Eason"
+								}),
+								/* @__PURE__ */ jsx("h3", {
+									className: "heading",
+									style: { color: "var(--colour-dark)" },
+									children: "Webflow Developer"
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: "content vertical left-aligned height-auto",
+									style: { paddingTop: "2rem" },
+									children: /* @__PURE__ */ jsx("a", {
+										href: "mailto:robbie@re-des.work@gmail.com",
+										children: /* @__PURE__ */ jsx("h3", {
+											className: "heading",
+											children: "robbie@re-des.work"
+										})
+									})
+								})
+							]
+						})
+					]
+				})
+			})
+		})
+	}), /* @__PURE__ */ jsx("div", { className: "page-bg dark" })] });
+}
 // src/components/icons/IconArrow.tsx
 function IconArrow({ colour = "#7531f7", rotate = 0 }) {
 	return /* @__PURE__ */ jsx("svg", {
@@ -133,106 +214,6 @@ function Button({ anim, animDuration = .6, animOrigin, animScale, splitType = "c
 		]
 	});
 }
-// src/pages/home/Home.tsx
-function HomePage() {
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx("div", {
-		className: "page-content",
-		children: /* @__PURE__ */ jsx("section", {
-			className: "section hero home-placeholder dark top",
-			children: /* @__PURE__ */ jsx("div", {
-				className: "card",
-				children: /* @__PURE__ */ jsxs("div", {
-					className: "grid",
-					children: [
-						/* @__PURE__ */ jsx("div", {
-							className: "home-card header",
-							style: {
-								gridColumn: "1/13",
-								gridRow: "1/2",
-								color: "var(--colour-dark)"
-							},
-							children: /* @__PURE__ */ jsx("h1", {
-								className: "heading bold",
-								"data-fitty": true,
-								"data-text": "trim",
-								style: {
-									whiteSpace: "nowrap",
-									display: "inline-block",
-									width: "auto",
-									maxWidth: "100%",
-									color: "var(--colour-dark)"
-								},
-								children: "Site Coming Soon."
-							})
-						}),
-						/* @__PURE__ */ jsx("div", {
-							className: "home-card brand",
-							style: {
-								fontSize: "var(--text-h3)",
-								color: "var(--colour-dark)"
-							},
-							children: /* @__PURE__ */ jsx("h1", {
-								className: "heading bold",
-								style: { color: "var(--colour-dark)" },
-								children: "RE Design"
-							})
-						}),
-						/* @__PURE__ */ jsxs("div", {
-							className: "home-card info",
-							children: [
-								/* @__PURE__ */ jsx(Button, {
-									link: "/home-dev",
-									text: "/home-dev",
-									transitionKey: "swipe-between",
-									anim: "splitSwap,iconSwap,colourChange",
-									enableLargeIcon: true,
-									enableIcon: false,
-									rotateIcon: 180,
-									rotateLargeIcon: 180
-								}),
-								/* @__PURE__ */ jsx("div", { style: { height: "1rem" } }),
-								/* @__PURE__ */ jsx(Button, {
-									link: "/work",
-									text: "/work",
-									transitionKey: "swipe-between",
-									anim: "splitSwap,iconSwap,colourChange",
-									enableLargeIcon: true,
-									enableIcon: false,
-									rotateIcon: 180,
-									rotateLargeIcon: 180
-								}),
-								/* @__PURE__ */ jsx("h3", {
-									className: "heading bold",
-									style: {
-										marginTop: "2rem",
-										color: "var(--colour-dark)"
-									},
-									children: "Robbie Eason"
-								}),
-								/* @__PURE__ */ jsx("h3", {
-									className: "heading",
-									style: { color: "var(--colour-dark)" },
-									children: "Webflow Developer"
-								}),
-								/* @__PURE__ */ jsx("div", {
-									className: "content vertical left-aligned height-auto",
-									style: { paddingTop: "2rem" },
-									children: /* @__PURE__ */ jsx("a", {
-										href: "mailto:robbie@re-des.work@gmail.com",
-										children: /* @__PURE__ */ jsx("h3", {
-											className: "heading",
-											children: "robbie@re-des.work"
-										})
-									})
-								})
-							]
-						})
-					]
-				})
-			})
-		})
-	}), /* @__PURE__ */ jsx("div", { className: "page-bg dark" })] });
-}
 // src/components/button/buttonCta.tsx
 function ButtonCta({ transitionKey = "swipe-between", text = "Button Text", link = "" }) {
 	return /* @__PURE__ */ jsx(Button, {
@@ -288,7 +269,7 @@ function Breadcrumbs({ variant = "dark", includeHome = true, transitionKey = "ve
 	});
 }
 // src/components/structure/headers/HeroHeader.tsx
-function HeroHeader({ variant = "light", heroHeading = "Hero Heading", heroSubHeading = "Hero subheading", heroCopy, children, childrenOverride = false, breadcrumb = true }) {
+function HeroHeader({ variant = "light", heroHeading = "Hero Heading", heroSubHeading, heroCopy, children, childrenOverride = false, breadcrumb = true }) {
 	const textColours = {
 		"dark": "var(--colour-dark)",
 		"light": "var(--colour-light)"
@@ -304,6 +285,7 @@ function HeroHeader({ variant = "light", heroHeading = "Hero Heading", heroSubHe
 				includeHome: true
 			}), /* @__PURE__ */ jsx("h1", {
 				className: "hero-heading light",
+				"data-anim": "splitChars",
 				style: {
 					maxWidth: "",
 					color: textColours[variant]
@@ -317,7 +299,7 @@ function HeroHeader({ variant = "light", heroHeading = "Hero Heading", heroSubHe
 				gridRow: "2/3"
 			},
 			children: [
-				/* @__PURE__ */ jsx("h2", { children: heroSubHeading }),
+				heroSubHeading && /* @__PURE__ */ jsx("h2", { children: heroSubHeading }),
 				/* @__PURE__ */ jsx("p", {
 					className: "hero-copy align-start",
 					style: { color: textColours[variant] },
@@ -591,6 +573,182 @@ function Logopage() {
 		})
 	});
 }
+// src/pages/about/About.tsx
+function About() {
+	return /* @__PURE__ */ jsxs(Fragment, { children: [
+		/* @__PURE__ */ jsx(Section, {
+			classes: "light top no-padding-bottom",
+			children: /* @__PURE__ */ jsx(HeroHeader, {
+				heroHeading: "About",
+				variant: "dark"
+			})
+		}),
+		/* @__PURE__ */ jsx(Section, {
+			classes: "light",
+			children: /* @__PURE__ */ jsx("div", {
+				className: "grid",
+				children: /* @__PURE__ */ jsxs("div", {
+					className: "about-grid",
+					children: [
+						/* @__PURE__ */ jsxs("div", {
+							className: "about-row",
+							children: [
+								/* @__PURE__ */ jsx("h3", {
+									className: "about-title",
+									"data-anim": "splitLines",
+									children: "SKILLS"
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: "about-div",
+									"data-anim": "divider"
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "about-copy-wrap full-w",
+									children: [
+										/* @__PURE__ */ jsx("p", {
+											className: "about-copy",
+											"data-anim": "splitLines",
+											children: "A combination of design understanding and technical knowledge allows me to approach projects from different angles, choosing the right tools and techniques for each build."
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: "about-copy-list-wrap",
+											children: [/* @__PURE__ */ jsx("h4", {
+												className: "about-copy-subhead",
+												"data-anim": "splitLines",
+												children: "PLATFORMS"
+											}), /* @__PURE__ */ jsxs("ul", {
+												className: "about-copy-list",
+												"data-anim": "lazyChild",
+												children: [
+													/* @__PURE__ */ jsx("li", { children: "Webflow" }),
+													/* @__PURE__ */ jsx("li", { children: "Cloudflare" }),
+													/* @__PURE__ */ jsx("li", { children: "Github" })
+												]
+											})]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: "about-copy-list-wrap",
+											children: [/* @__PURE__ */ jsx("h4", {
+												className: "about-copy-subhead",
+												"data-anim": "splitLines",
+												children: "LANGUAGES"
+											}), /* @__PURE__ */ jsxs("ul", {
+												className: "about-copy-list",
+												"data-anim": "lazyChild",
+												children: [
+													/* @__PURE__ */ jsx("li", { children: "HTML" }),
+													/* @__PURE__ */ jsx("li", { children: "CSS" }),
+													/* @__PURE__ */ jsx("li", { children: "Javascript" }),
+													/* @__PURE__ */ jsx("li", { children: "React" })
+												]
+											})]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: "about-copy-list-wrap",
+											children: [/* @__PURE__ */ jsx("h4", {
+												className: "about-copy-subhead",
+												"data-anim": "splitLines",
+												children: "SPECIALISMS"
+											}), /* @__PURE__ */ jsxs("ul", {
+												className: "about-copy-list",
+												"data-anim": "lazyChild",
+												children: [
+													/* @__PURE__ */ jsx("li", { children: "Responsive Development" }),
+													/* @__PURE__ */ jsx("li", { children: "Animation & Interaction" }),
+													/* @__PURE__ */ jsx("li", { children: "Third-party integration" }),
+													/* @__PURE__ */ jsx("li", { children: "Custom functionality" })
+												]
+											})]
+										})
+									]
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "about-row",
+							children: [
+								/* @__PURE__ */ jsx("h3", {
+									className: "about-title",
+									"data-anim": "splitLines",
+									children: "BACKGROUND"
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: "about-div",
+									"data-anim": "divider"
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "about-copy-wrap",
+									children: [/* @__PURE__ */ jsx("p", {
+										className: "about-copy",
+										"data-anim": "splitLines",
+										children: "I'm a freelance Website Developer working under RE Design, specialising in bespoke websites that balance clean design, considered functionality and engaging interactions."
+									}), /* @__PURE__ */ jsx("p", {
+										className: "about-copy",
+										"data-anim": "splitLines",
+										children: "I enjoy taking static designs and bringing them to life, finding solutions to technical challenges and making sure every detail works as it should."
+									})]
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "about-row",
+							children: [
+								/* @__PURE__ */ jsx("h3", {
+									className: "about-title",
+									"data-anim": "splitLines",
+									children: "EXPERTISE"
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: "about-div",
+									"data-anim": "divider"
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "about-copy-wrap",
+									children: [/* @__PURE__ */ jsx("p", {
+										className: "about-copy",
+										"data-anim": "splitLines",
+										children: "With a background in Graphic Design and UX, I bring an understanding of both the visual and functional sides of a website."
+									}), /* @__PURE__ */ jsx("p", {
+										className: "about-copy",
+										"data-anim": "splitLines",
+										children: "My work goes beyond translating designs into code. From responsive layouts and custom interactions to complex third-party integrations, I enjoy finding the right approach to make each project work."
+									})]
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "about-row",
+							children: [
+								/* @__PURE__ */ jsx("h3", {
+									className: "about-title",
+									"data-anim": "splitLines",
+									children: "ROBBIE"
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: "about-div",
+									"data-anim": "divider"
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "about-copy-wrap",
+									children: [/* @__PURE__ */ jsx("p", {
+										className: "about-copy",
+										"data-anim": "splitLines",
+										children: "I started working in website development shortly after graduating from university, initially through contract work before establishing my own freelance practice."
+									}), /* @__PURE__ */ jsx("p", {
+										className: "about-copy",
+										"data-anim": "splitLines",
+										children: "Outside of work, I'm interested in architecture, music and history - all of which offer their own perspectives on design, creativity and the world around us."
+									})]
+								})
+							]
+						})
+					]
+				})
+			})
+		}),
+		/* @__PURE__ */ jsx(Footer, {})
+	] });
+}
 // src/pages/pageIndex.tsx
 var pages = {
 	"/": {
@@ -599,6 +757,15 @@ var pages = {
 		seo: {
 			title: "RE Design | Website Coming Soon",
 			description: "RE Design by Robbie Eason, freelance Webflow developer. Website coming soon."
+		}
+	},
+	"/about": {
+		component: About,
+		label: "About",
+		seo: {
+			title: "About | RE Design",
+			description: "Lorem ipsum dolor.",
+			noIndex: true
 		}
 	},
 	"/test-page": {
@@ -816,22 +983,24 @@ function AppRoutes() {
 		});
 		return () => window.cancelAnimationFrame(frame);
 	}, [transitionRuntime]);
-	const defaultRouteElement = useRoutes(routes);
-	if (!transitionRuntime) return defaultRouteElement;
+	if (!transitionRuntime) return null;
 	const TransitionController = transitionRuntime.Component;
 	return /* @__PURE__ */ jsx(TransitionController, {
 		routes,
 		config: transitionRuntime.config
 	});
 }
+var hiddenNavRoutes = ["/"];
 /**
 * Shared application tree used by both the browser router and the
 * StaticRouter used during the prerender build.
 */
 function AppContent() {
+	const location = useLocation();
+	const showNavbar = !hiddenNavRoutes.includes(location.pathname);
 	return /* @__PURE__ */ jsxs(Fragment, { children: [
 		/* @__PURE__ */ jsx(PageMetadata, {}),
-		/* @__PURE__ */ jsx(Navbar, {}),
+		showNavbar && /* @__PURE__ */ jsx(Navbar, {}),
 		/* @__PURE__ */ jsx(TransitionMask, {}),
 		/* @__PURE__ */ jsx("div", {
 			className: "smooth-wrapper",
