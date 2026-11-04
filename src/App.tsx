@@ -138,7 +138,7 @@ function AppRoutes() {
         return () => window.cancelAnimationFrame(frame);
     }, [transitionRuntime]);
 
-    const defaultRouteElement = useRoutes(routes);
+    // const defaultRouteElement = useRoutes(routes);
 
     if (!transitionRuntime) {
         return null;
