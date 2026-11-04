@@ -17,6 +17,10 @@
     grid-row: 2/3;
 
     justify-content: end;
+    align-items: start;
+
+    display: flex;
+    flex-direction: column;
 
     color: var(--colour-dark);
 
@@ -27,7 +31,7 @@
 }
 
 .home-card.info {
-    grid-column: 7/13;
+    grid-column: 9/13;
     grid-row: 2/3;
 
     justify-content: end;

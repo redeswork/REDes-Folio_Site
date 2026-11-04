@@ -35,20 +35,20 @@ export function About() {
                                         A combination of design understanding and technical knowledge allows me to approach projects from different angles, choosing the right tools and techniques for each build.
                                     </p>
 
-                                    <div className="about-copy-list-wrap" data-anim="lazyLoad">
-                                        <h4 className="about-copy-subhead">PLATFORMS</h4>
+                                    <div className="about-copy-list-wrap">
+                                        <h4 className="about-copy-subhead" data-anim="splitLines">PLATFORMS</h4>
 
-                                        <ul className="about-copy-list">
+                                        <ul className="about-copy-list" data-anim="lazyChild">
                                             <li>Webflow</li>
                                             <li>Cloudflare</li>
                                             <li>Github</li>
                                         </ul>
                                     </div>
 
-                                    <div className="about-copy-list-wrap" data-anim="lazyLoad">
-                                        <h4 className="about-copy-subhead">LANGUAGES</h4>
+                                    <div className="about-copy-list-wrap">
+                                        <h4 className="about-copy-subhead" data-anim="splitLines">LANGUAGES</h4>
 
-                                        <ul className="about-copy-list">
+                                        <ul className="about-copy-list" data-anim="lazyChild">
                                             <li>HTML</li>
                                             <li>CSS</li>
                                             <li>Javascript</li>
@@ -56,10 +56,10 @@ export function About() {
                                         </ul>
                                     </div>
 
-                                    <div className="about-copy-list-wrap" data-anim="lazyLoad">
-                                        <h4 className="about-copy-subhead">SPECIALISMS</h4>
+                                    <div className="about-copy-list-wrap">
+                                        <h4 className="about-copy-subhead" data-anim="splitLines">SPECIALISMS</h4>
 
-                                        <ul className="about-copy-list">
+                                        <ul className="about-copy-list" data-anim="lazyChild">
                                             <li>Responsive Development</li>
                                             <li>Animation & Interaction</li>
                                             <li>Third-party integration</li>

@@ -141,7 +141,7 @@ function AppRoutes() {
     const defaultRouteElement = useRoutes(routes);
 
     if (!transitionRuntime) {
-        return defaultRouteElement;
+        return null;
     }
 
     const TransitionController = transitionRuntime.Component;
@@ -154,15 +154,22 @@ function AppRoutes() {
     );
 }
 
+const hiddenNavRoutes = ["/", ]
+
 /**
  * Shared application tree used by both the browser router and the
  * StaticRouter used during the prerender build.
  */
 export function AppContent() {
+
+    const location = useLocation();
+
+    const showNavbar = !hiddenNavRoutes.includes(location.pathname);
+    
     return (
         <>
             <PageMetadata />
-            <Navbar />
+            {showNavbar && <Navbar />}
             <TransitionMask />
             <div className="smooth-wrapper">
                 <div className="smooth-content">
