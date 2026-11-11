@@ -269,13 +269,13 @@ function Breadcrumbs({ variant = "dark", includeHome = true, transitionKey = "ve
 	});
 }
 // src/components/structure/headers/HeroHeader.tsx
-function HeroHeader({ variant = "light", heroHeading = "Hero Heading", heroSubHeading, heroCopy, children, childrenOverride = false, breadcrumb = true }) {
+function HeroHeader({ variant = "light", heroHeading = "Hero Heading", heroSubHeading, heroCopy, children, childrenOverride = false, breadcrumb = true, classes }) {
 	const textColours = {
 		"dark": "var(--colour-dark)",
 		"light": "var(--colour-light)"
 	};
 	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("header", {
-		className: "grid",
+		className: `grid ${classes ?? ""}`,
 		style: { rowGap: "0.5rem" },
 		children: [!childrenOverride && /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs("div", {
 			className: "hero-heading-wrap",
@@ -359,15 +359,21 @@ function Footer() {
 	}) });
 }
 // src/components/structure/PageStructure.tsx
-function PageStructure({ children, bgClass }) {
-	return /* @__PURE__ */ jsxs(Fragment, { children: [
-		/* @__PURE__ */ jsx("div", {
-			className: "page-content",
-			children
-		}),
-		/* @__PURE__ */ jsx("div", { className: `page-bg ${bgClass}` }),
-		/* @__PURE__ */ jsx(Footer, {})
-	] });
+function PageStructure({ children, bgClass, includeFooter = true, className, pageWrapAttributes, ...pageContentAttributes }) {
+	return /* @__PURE__ */ jsxs("div", {
+		className: "page-wrap",
+		"data-page-wrap": true,
+		...pageWrapAttributes,
+		children: [
+			/* @__PURE__ */ jsx("div", {
+				className: `page-content ${className ?? ""}`,
+				...pageContentAttributes,
+				children
+			}),
+			/* @__PURE__ */ jsx("div", { className: `page-bg ${bgClass ?? ""}` }),
+			includeFooter && /* @__PURE__ */ jsx(Footer, {})
+		]
+	});
 }
 // src/components/structure/Section.tsx
 function Section({ children, classes = "", wrapper = true, wrapperClasses = "" }) {
@@ -406,26 +412,180 @@ function HomeNew() {
 }
 // src/pages/work/websites/projects/websiteClients.tsx
 var websiteClients = {
-	"IE": { name: "Immersive Everywhere" },
-	"HH": { name: "Hartshorn Hook" }
+	"IE": {
+		name: "Immersive Everywhere",
+		link: "https://www.immersiveeverywhere.com/"
+	},
+	"HH": {
+		name: "Hartshorn Hook",
+		link: "https://www.hartshornhook.com/"
+	},
+	"EMG": {
+		name: "EMG Entertainment",
+		link: "https://emg-ents.com/"
+	},
+	"PBO": {
+		name: "Perthshire Theatre and Concert Hall",
+		link: "https://www.perththeatreandconcerthall.com/"
+	},
+	"TT": {
+		name: "Troubadour Theatres",
+		link: "https://www.troubadourtheatres.com/"
+	},
+	"BVG": {
+		name: "Annerin",
+		link: "https://www.annerin.com/"
+	},
+	"WPE": {
+		name: "Wild Park Entertainment",
+		link: "https://www.wildparkentertainment.com/"
+	},
+	"RB": {
+		name: "Ray Bradshaw",
+		link: "https://www.raybradshaw.com/"
+	}
 };
 // src/pages/work/websites/projects/websiteData.tsx
-var websiteProjects = [{
-	title: "The Traitors Live Experience",
-	slug: "the-traitors-live-experience",
-	client: websiteClients.IE.name
-}, {
-	title: "Peppa Pig Surprise Party",
-	slug: "peppa-pig-surprise-party",
-	client: websiteClients.IE.name
-}];
+var websiteProjects = [
+	{
+		title: "The Traitors Live Experience",
+		slug: "the-traitors-live-experience",
+		clientName: websiteClients.IE.name,
+		clientLink: websiteClients.IE.link,
+		status: "live",
+		dateText: "June 2024",
+		date: "2024-06-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/TTLE.png",
+		link: "https://www.thetraitorslive.co.uk/",
+		colour: "#f58221",
+		description: "The latest experience from Immersive Everywhere, bringing Peppa Pig to life. Live and in person at the Metro Centre in Gateshead.\n\nThe site features complex assets, TickX integration, music player and CMS driven FAQs.\n\nDesign by AKA."
+	},
+	{
+		title: "Peppa Pig Surprise Party",
+		slug: "peppa-pig-surprise-party",
+		clientName: websiteClients.IE.name,
+		clientLink: websiteClients.IE.link,
+		status: "closed",
+		dateText: "June 2025",
+		date: "2025-06-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/PPSP.png",
+		link: "https://www.peppapigsurpriseparty.co.uk/",
+		colour: "#e31d79",
+		description: "This website was developed for The Traitors Live Experience, an exciting new live experience inviting the public to participate in the devious game of lies and deceipt based on the hit television show The Traitors.\n\nThis website was built featuring CMS features for FAQs, sign-up forms for presale & embedded booking functionality.\n\nDesign by AKA."
+	},
+	{
+		title: "Perthshire Box Office",
+		slug: "perthshire-box-office",
+		clientName: websiteClients.PBO.name,
+		clientLink: websiteClients.PBO.link,
+		status: "live",
+		dateText: "March 2024",
+		date: "2024-03-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/PBO.png",
+		link: "https://www.perthshireboxoffice.com/",
+		colour: "#00dbb2",
+		description: `This website was developed for Perthshire Theatre and Concert Hall's new box office service "Perthshire Box Office" - offering box office services to culture, leisure and tourism sectors across Perth and Kinross. Delivering through online, telephone and in person booking.\n\nI also developed the lightweight brand for the website, featuring a fresh colour palette and a new logo inspired by the iron entrance to Perth Theatre and a ticket.\n\nThe website has search functionality, including by type and partner.`
+	},
+	{
+		title: "Ulster American",
+		slug: "ulster-american",
+		clientName: websiteClients.EMG.name,
+		clientLink: websiteClients.EMG.link,
+		status: "closed",
+		dateText: "October 2023",
+		date: "2023-10-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/UA.png",
+		link: "",
+		colour: "#e6fb10",
+		description: `A black comedy from award winning playwright David Ireland, this dark play features a star studded cast of Woody Harrelson, Andy Serkis & Louisa Harland.\n\nDesign by Emilie Chen.`
+	},
+	{
+		title: "Dear Evan Hansen",
+		slug: "dear-evan-hansen",
+		clientName: websiteClients.EMG.name,
+		clientLink: websiteClients.EMG.link,
+		status: "closed",
+		dateText: "November 2023",
+		date: "2023-11-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/DEH.png",
+		link: "",
+		colour: "#0a4f8c",
+		description: `Based on the 2021 film, Dear Evan Hansen has been touring for the last few years - featuring a Grammy award winning score packed with some of the biggest musical theatre songs of the last decade.Featuring CMS built for tour dates with booking links & embedded social media feed.`
+	},
+	{
+		title: "Troubadour Studios",
+		slug: "troubadour-studios",
+		clientName: websiteClients.TT.name,
+		clientLink: websiteClients.TT.link,
+		status: "live",
+		dateText: "May 2024",
+		date: "2024-05-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/TS.png",
+		link: "https://www.troubadourstudios.com/",
+		colour: "#ffffff",
+		description: `Troubadour built their own collection of creative spaces, flexible theatres and studio spaces catering to a variety of needs, offices included.\n\nSince then they have catered to a vast variety of creative clients such as the BBC, Netflix, Disney - and many more. This website features technical details about each of their studios and constituent creative spaces.`
+	},
+	{
+		title: "Kim's Convenience",
+		slug: "kims-convenience",
+		clientName: websiteClients.EMG.name,
+		clientLink: websiteClients.EMG.link,
+		status: "closed",
+		dateText: "June 2024",
+		date: "2024-06-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/KC.png",
+		link: "",
+		colour: "#f6ff6f",
+		description: `Now a global smash hit, this hilarious and heartwarming drama about a family-run Korean store that inspired the Netflix phenomenon, is written by Ins Choi, who calls the play his "love letter to his parents and to all first-generation immigrants who now call Canada their home."`
+	},
+	{
+		title: "Beyond Van Gogh",
+		slug: "beyond-van-gogh",
+		clientName: websiteClients.BVG.name,
+		clientLink: websiteClients.BVG.link,
+		status: "live",
+		dateText: "July 2024",
+		date: "2024-07-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/BVG.png",
+		link: "https://www.beyondvangogh.co.uk/",
+		colour: "#00263e",
+		description: `Beyond Van Gogh is an immersive exhibit projecting the post impressionist master's works in a stunning display, transporting you to the mind of one of historys greatest artists.`
+	},
+	{
+		title: "Murder She Didn't Write",
+		slug: "murder-she-didnt-write",
+		clientName: websiteClients.WPE.name,
+		clientLink: websiteClients.WPE.link,
+		status: "live",
+		dateText: "December 2024",
+		date: "2024-12-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/MSDW.png",
+		link: "https://www.murdershedidntwrite.com/",
+		colour: "#1a2517",
+		description: `Murder She Didn't write is a hit play where the audience acts as the writer of a murder mystery. The talented cast improvise a the plot based on audience suggestions.`
+	},
+	{
+		title: "Ray Bradshaw Tour Site",
+		slug: "ray-bradshaw-tour-site",
+		clientName: websiteClients.RB.name,
+		clientLink: websiteClients.RB.link,
+		status: "live",
+		dateText: "April 2025",
+		date: "2025-04-01",
+		thumbnailUrl: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/projects/thumbnails/original/RB.png",
+		link: "https://www.raybradshaw.com/",
+		colour: "#d87e48",
+		description: `Murder She Didn't write is a hit play where the audience acts as the writer of a murder mystery. The talented cast improvise a the plot based on audience suggestions.`
+	}
+];
 // src/components/cards/WorkCard.tsx
-function WorkCard({ title = "Work Card", client = "Client name", slug }) {
-	return /* @__PURE__ */ jsx(Link, {
+function WorkCard({ title = "Work Card", client = "Client name", slug, img, bgCol }) {
+	return /* @__PURE__ */ jsxs(Link, {
 		className: "work-card",
 		to: `/work/websites/${slug}`,
 		"aria-label": `View ${title} website project`,
-		children: /* @__PURE__ */ jsx("div", {
+		"data-transition": "flip-img-clone",
+		children: [/* @__PURE__ */ jsx("div", {
 			className: "work-card-content",
 			children: /* @__PURE__ */ jsxs("div", {
 				className: "work-card-title-wrap",
@@ -437,7 +597,19 @@ function WorkCard({ title = "Work Card", client = "Client name", slug }) {
 					children: client
 				})]
 			})
-		})
+		}), /* @__PURE__ */ jsxs("div", {
+			className: "work-card-bg",
+			"data-anim-flip": "target-container",
+			style: { backgroundColor: bgCol },
+			children: [/* @__PURE__ */ jsx("p", {
+				className: "flip-identifier",
+				children: title
+			}), /* @__PURE__ */ jsx("img", {
+				"data-anim-flip": "flip-item",
+				className: "work-card-bg-img",
+				src: img
+			})]
+		})]
 	});
 }
 // src/pages/work/websites/websites.tsx
@@ -449,53 +621,63 @@ function Websites() {
 			children: [/* @__PURE__ */ jsx(HeroHeader, {
 				variant: "dark",
 				heroHeading: "Website Work",
-				heroCopy: "A selection of bespoke website design and development projects, from custom Webflow websites to responsive digital experiences for businesses, creative professionals and entertainment clients."
+				heroCopy: "A selection of bespoke website design and development projects, from custom Webflow websites to responsive digital experiences for businesses, creative professionals and entertainment clients.",
+				classes: "auto-h"
 			}), /* @__PURE__ */ jsx("div", {
 				className: "grid",
 				style: { marginTop: "2rem" },
 				children: /* @__PURE__ */ jsx("div", {
-					className: "content vertical",
+					className: "content vertical rem-2",
 					style: { gridColumn: "1/13" },
 					children: websiteProjects.map((project) => /* @__PURE__ */ jsx(WorkCard, {
 						title: project.title,
-						client: project.client,
-						slug: project.slug
+						client: project.clientName,
+						slug: project.slug,
+						img: project.thumbnailUrl,
+						bgCol: project.colour
 					}, project.slug))
 				})
 			})]
 		})
 	}) });
 }
-// src/pages/testPage/TestPage.tsx
-function TestPage() {
-	return /* @__PURE__ */ jsx(PageStructure, {
-		bgClass: "dark",
-		children: /* @__PURE__ */ jsx("section", {
-			className: "section dark min-100 top",
+// src/pages/work/websites/WebsitesWheel.tsx
+function WebsitesWheel() {
+	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(PageStructure, {
+		"data-page-wrap": true,
+		"data-anim-snap": "cardShuffleSnap",
+		includeFooter: false,
+		children: /* @__PURE__ */ jsx("div", {
+			className: "wrapper full-h",
 			children: /* @__PURE__ */ jsx("div", {
-				className: "wrapper",
-				children: /* @__PURE__ */ jsxs("div", {
-					className: "content vertical",
-					children: [/* @__PURE__ */ jsx("h1", {
-						style: {
-							color: "var(--colour-light)",
-							marginBottom: "2rem"
-						},
-						children: "Test Page"
-					}), /* @__PURE__ */ jsx(Button, {
-						link: "/",
-						text: "Test Transition",
-						transitionKey: "swipe-between",
-						anim: "splitSwap,iconSwap,colourChange",
-						enableIcon: false,
-						enableLargeIcon: true,
-						rotateIcon: 180,
-						rotateLargeIcon: 180
+				className: "snap-card-wrapper",
+				children: websiteProjects.map((project) => /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("div", {
+					className: "snap-card-shuffle",
+					"data-shuffle-slide": true,
+					children: [/* @__PURE__ */ jsxs("div", {
+						className: "snap-card-shuffle-content",
+						children: [/* @__PURE__ */ jsx("h3", {
+							className: "snap-card-shuffle-title",
+							children: project.title
+						}), /* @__PURE__ */ jsx("h4", {
+							className: "snap-card-shuffle-client",
+							children: project.clientName
+						})]
+					}), /* @__PURE__ */ jsx("div", {
+						className: "snap-card-shuffle-bg",
+						children: /* @__PURE__ */ jsx("img", {
+							src: project.thumbnailUrl,
+							className: "snap-card-shuffle-img"
+						})
 					})]
-				})
+				}) }, project.title))
 			})
 		})
-	});
+	}) });
+}
+// src/pages/testPage/TestPage.tsx
+function TestPage() {
+	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(WebsitesWheel, {}) });
 }
 // src/pages/work/portfolio.tsx
 function Work() {
@@ -528,19 +710,46 @@ function Work() {
 function WebsiteProject() {
 	const { slug } = useParams();
 	const project = websiteProjects.find((project) => project.slug === slug);
-	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(PageStructure, {
-		bgClass: "light",
-		children: /* @__PURE__ */ jsx("main", {
-			className: "website-project",
+	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("main", {
+		className: "page-wrap",
+		"data-anim-flip": "transition-page",
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "page-content",
 			children: /* @__PURE__ */ jsx(Section, {
-				classes: "light min-100 top",
-				children: !project ? /* @__PURE__ */ jsx("h1", { children: "Project not found" }) : /* @__PURE__ */ jsx(HeroHeader, {
-					variant: "dark",
-					heroHeading: project.title,
-					heroCopy: project.client
-				})
+				classes: "no-bg min-100 top",
+				children: !project ? /* @__PURE__ */ jsx("h1", { children: "Project not found" }) : /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("div", {
+					className: "grid",
+					children: [
+						/* @__PURE__ */ jsx("div", {
+							className: "breadcrumb-wrap",
+							children: /* @__PURE__ */ jsx(Breadcrumbs, {
+								variant: "dark",
+								includeHome: true
+							})
+						}),
+						/* @__PURE__ */ jsx("div", {
+							className: "project-title-wrap",
+							children: /* @__PURE__ */ jsx("h1", {
+								className: "project-title",
+								children: project.title
+							})
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "project-img-wrap",
+							"data-anim-flip": "source-container",
+							children: [/* @__PURE__ */ jsx("p", {
+								className: "flip-identifier",
+								children: project.title
+							}), /* @__PURE__ */ jsx("img", {
+								"data-anim-flip": "flip-item",
+								className: "work-card-bg-img flip-destination-state",
+								src: project.thumbnailUrl
+							})]
+						})
+					]
+				}) })
 			})
-		})
+		}), /* @__PURE__ */ jsx("div", { className: "page-bg light" })]
 	}) });
 }
 // src/pages/logo.tsx
@@ -749,6 +958,36 @@ function About() {
 		/* @__PURE__ */ jsx(Footer, {})
 	] });
 }
+// src/pages/playground/Playground.tsx
+function Playground() {
+	return /* @__PURE__ */ jsx("div", {
+		className: "redes-event-popup-wrap",
+		children: /* @__PURE__ */ jsxs("div", {
+			className: "redes-event-content",
+			children: [
+				/* @__PURE__ */ jsx("div", {
+					className: "redes-event-close",
+					children: /* @__PURE__ */ jsx("img", {
+						className: "redes-event-close-icon",
+						src: "https://raw.githubusercontent.com/redeswork/REDes-Assets/refs/heads/main/icons/Arts%20Tickets/popup_close%20(CTA).png"
+					})
+				}),
+				/* @__PURE__ */ jsx("h3", {
+					className: "redes-event-title",
+					children: "Fancy a drink on arrival?"
+				}),
+				/* @__PURE__ */ jsx("p", {
+					className: "redes-event-copy",
+					children: "Pre-order your welcome and interval drinks here!"
+				}),
+				/* @__PURE__ */ jsx("button", {
+					className: "redes-button",
+					children: "Order Your Drinks Now"
+				})
+			]
+		})
+	});
+}
 // src/pages/pageIndex.tsx
 var pages = {
 	"/": {
@@ -810,12 +1049,21 @@ var pages = {
 			description: "RE Design visual identity."
 		}
 	},
+	"/playground": {
+		component: Playground,
+		label: "Playground",
+		seo: {
+			title: "Playground",
+			description: "lorem",
+			noIndex: false
+		}
+	},
 	...Object.fromEntries(websiteProjects.map((project) => [`/work/websites/${project.slug}`, {
 		component: WebsiteProject,
 		label: project.title,
 		seo: {
 			title: `${project.title} | RE Design`,
-			description: `${project.title}, a website project for ${project.client} by RE Design.`
+			description: `${project.title}, a website project for ${project.clientName} by RE Design.`
 		}
 	}]))
 };

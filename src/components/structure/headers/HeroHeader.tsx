@@ -12,7 +12,8 @@ export function HeroHeader( {
     heroCopy,
     children,
     childrenOverride = false,
-    breadcrumb = true
+    breadcrumb = true,
+    classes,
 }: {
     variant?: string,
     heroHeading?: string,
@@ -20,7 +21,8 @@ export function HeroHeader( {
     heroCopy?: string,
     children?: ReactNode,
     childrenOverride?: boolean,
-    breadcrumb?: boolean
+    breadcrumb?: boolean,
+    classes?: string
 
 }) {
 
@@ -32,7 +34,7 @@ export function HeroHeader( {
     return(
 
         <>
-            <header className="grid" style={{rowGap: "0.5rem"}}>
+            <header className={`grid ${classes ?? ""}`} style={{rowGap: "0.5rem"}}>
 
                 {!childrenOverride && (
                 <>

@@ -18,16 +18,17 @@ export function Websites() {
                 variant="dark"
                 heroHeading="Website Work"
                 heroCopy="A selection of bespoke website design and development projects, from custom Webflow websites to responsive digital experiences for businesses, creative professionals and entertainment clients."
+                classes="auto-h"
                 ></HeroHeader>
 
 
                 <div className="grid" style={{marginTop: "2rem"}}>
 
-                    <div className="content vertical" style={{gridColumn: "1/13"}}>
+                    <div className="content vertical rem-2" style={{gridColumn: "1/13"}}>
 
                         {websiteProjects.map((project) => (
                             
-                            <WorkCard key={project.slug} title={project.title} client={project.client} slug={project.slug} />
+                            <WorkCard key={project.slug} title={project.title} client={project.clientName} slug={project.slug} img={project.thumbnailUrl} bgCol={project.colour}/>
                         ))}
 
                     </div>

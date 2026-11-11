@@ -9,13 +9,6 @@
 // @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 
-html {
-    background: #ff00ff !important;
-}
-
-body {
-    background: #00ff00 !important;
-}
 
 
 /* ========================================
@@ -232,6 +225,10 @@ a {
     background-color: var(--colour-cta);
   }
 
+  &.no-bg {
+    background-color: transparent;
+  }
+
   &.top {
     padding-top: calc(var(--section-padding) + var(--nav-h));
   }
@@ -252,7 +249,7 @@ a {
     min-height: 100vh;
 
     @include tablet {
-        height: 100vh;
+        height: 100svh;
     }
   }
 
@@ -272,7 +269,7 @@ a {
   }
 
   @include tablet {
-    height: 100vh;
+    height: 100svh;
   }
   &.home-placeholder {
     padding: 2rem;
@@ -341,6 +338,10 @@ a {
     gap: 1rem;
   }
 
+  &.auto-h {
+    height: auto;
+  }
+
 }
 
 .grid.align-bottom {
@@ -380,6 +381,12 @@ a {
   &.height-auto {
     height: auto;
   }
+  &.rem-1 {
+    gap: 1rem;
+  }
+  &.rem-2 {
+    gap: 2rem;
+  }
 
 }
 
@@ -388,9 +395,6 @@ a {
 }
 
 
-.content.rem-1 {
-  gap: 1rem;
-}
 
 
 
@@ -455,6 +459,12 @@ p {
 .react-transition-stage > .barba-container:first-child:last-child {
     position: relative;
 }
+.flip-identifier {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  position: absolute;
+}
 
 
 
@@ -473,4 +483,9 @@ p {
 /* The React root is a hydration boundary, not a layout wrapper. */
 #root {
   display: contents;
+}
+
+
+.active-flip-item {
+  z-index: 200;
 }

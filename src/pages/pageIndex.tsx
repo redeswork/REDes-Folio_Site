@@ -7,6 +7,7 @@ import { websiteProjects } from "./work/websites/projects/websiteData";
 import { WebsiteProject } from "./work/websites/websiteTemplate";
 import { Logopage } from "./logo";
 import { About } from "./about/About";
+import { Playground } from "./playground/Playground";
 
 export type PageSeo = {
     title: string;
@@ -74,6 +75,17 @@ export const pages = {
             description: "RE Design visual identity.",
         },
     },
+    "/playground": {
+        component: Playground,
+        label: "Playground",
+        seo: {
+            title: "Playground",
+            description: "lorem",
+            noIndex: false
+        },
+    },
+
+
     ...Object.fromEntries(
         websiteProjects.map((project) => [
             `/work/websites/${project.slug}`,
@@ -82,7 +94,7 @@ export const pages = {
                 label: project.title,
                 seo: {
                     title: `${project.title} | RE Design`,
-                    description: `${project.title}, a website project for ${project.client} by RE Design.`,
+                    description: `${project.title}, a website project for ${project.clientName} by RE Design.`,
                 },
             },
         ])

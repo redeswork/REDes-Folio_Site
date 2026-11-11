@@ -1,0 +1,35 @@
+@use "../../../breakpoints" as bp;
+
+
+.breadcrumb-wrap {
+    grid-column: 1/13;
+
+    @include bp.tablet {
+        grid-column: 1/7;
+    }
+    @include bp.mobile-l {
+        grid-column: 1/5;
+    }
+}
+
+.project-title-wrap {
+    grid-column: 1/7;
+}
+
+.project-title {
+    font-size: var(--text-h0);
+}
+
+.project-img-wrap{
+    grid-column: 7/13;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    width: 100%;
+    aspect-ratio: 4/3;
+    // background-color: magenta;
+}
+.project-img {
+    width: 100%;
+    max-width: 100%;
+
+}
