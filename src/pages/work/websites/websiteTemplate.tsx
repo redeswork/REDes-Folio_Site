@@ -60,7 +60,7 @@ export function WebsiteProject() {
                                     <p key={index}>{paragraph}</p>
                                 ))}
                             </div>
-                            
+
                             <div className='project-img-wrap' data-anim-flip="source-container">
                                 <p className='flip-identifier'>{project.title}</p>
                                 <img data-anim-flip="flip-item" className="work-card-bg-img flip-destination-state" src={project.thumbnailUrl} style={{backgroundColor: project.colour}}></img>
@@ -86,6 +86,7 @@ export function WebsiteProject() {
                 data-swiper-tablet="true"
                 data-swiper-mobile="true"
                 data-swiper-space-between="24"
+                data-swiper-slides-per-view="auto"
                 >
                     <div className='more-projects-wrapper' data-swiper-wrapper>
 
