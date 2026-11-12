@@ -55,8 +55,12 @@ export function WebsiteProject() {
                                 </div>
                             </div>
 
-                            <p className='project-desc'>{project.description}</p>
-
+                            <div className="project-desc">
+                                {project.description.map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))}
+                            </div>
+                            
                             <div className='project-img-wrap' data-anim-flip="source-container">
                                 <p className='flip-identifier'>{project.title}</p>
                                 <img data-anim-flip="flip-item" className="work-card-bg-img flip-destination-state" src={project.thumbnailUrl} style={{backgroundColor: project.colour}}></img>

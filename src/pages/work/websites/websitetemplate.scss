@@ -48,12 +48,19 @@
 }
 
 .project-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     color: var(--colour-dark);
 
     grid-column: 1/7;
     grid-row: 4/5;
 
     align-self: center;
+
+    p {
+        color: var(--colour-dark);
+    }
 }
 
 .project-img-wrap{
@@ -81,8 +88,10 @@
 }
 
 .project-details-wrap {
+    height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-self: end;
     gap: 1.5rem;
 
     grid-column: 8/13;
@@ -92,13 +101,13 @@
     flex-direction: column;
     // gap: 1rem;
 
-    align-self: flex-end;
+    align-self: start;
 }
 .project-detail-heading {
-    font-size: var(--text-p);
+    font-size: var(--text-p-small);
 }
 .project-detail-text {
-    font-size: var(--text-p);
+    font-size: var(--text-p-small);
     font-weight: 600;
 }
 
