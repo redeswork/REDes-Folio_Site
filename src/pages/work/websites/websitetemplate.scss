@@ -95,6 +95,13 @@
     gap: 1.5rem;
 
     grid-column: 8/13;
+
+    @include bp.tablet {
+        grid-column: 1/7;
+    }
+    @include bp.mobile-l {
+        grid-column: 1/5;
+    }
 }
 .project-detail-wrap {
     display: flex;
