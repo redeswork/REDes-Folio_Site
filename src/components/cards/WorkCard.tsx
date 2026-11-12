@@ -26,13 +26,13 @@ export function WorkCard(
         >
             <div className='work-card-content'>
                 <div className='work-card-title-wrap'>
-                    <h3 className='work-card-title'>{title}</h3>
-                    <h4 className='work-card-client'>{client}</h4>
+                    <h3 className='work-card-title' data-anim="splitWords">{title}</h3>
+                    <h4 className='work-card-client' data-anim="splitLines">{client}</h4>
                 </div>
             </div>
-            <div className='work-card-bg' data-anim-flip="target-container" style={{backgroundColor: bgCol}}>
+            <div className='work-card-bg' data-anim-flip="target-container">
                 <p className='flip-identifier'>{title}</p>
-                <img data-anim-flip="flip-item" className='work-card-bg-img' src={img}></img>
+                <img data-anim-flip="flip-item" className='work-card-bg-img' src={img} style={{backgroundColor: bgCol}}></img>
             </div>
         </Link>
     )
