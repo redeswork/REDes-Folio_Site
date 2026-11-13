@@ -76,6 +76,7 @@
 
     font-size: var(--text-h6);
     text-transform: uppercase;
+    color: var(--colour-dark);
 }
 
 
@@ -85,9 +86,13 @@
 
     align-items: center;
     justify-content: end;
+
+    gap: 1rem;
 }
 
 .nav-link {
     font-size: var(--text-p);
     color: var(--colour-dark);
+
+    text-transform: uppercase;
 }

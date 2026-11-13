@@ -119,7 +119,7 @@ export function WebsiteProject() {
                             <Link 
                             key={moreProject.title}
                             className='more-projects-card'
-                            to={`/work/websites/${moreProject.slug}`}
+                            to={`/folio/${moreProject.slug}`}
                             aria-label={`View ${moreProject.title} website project`}
                             data-transition="flip-img-clone"
                             data-swiper-slide>

@@ -16,7 +16,7 @@ export function Websites() {
 
                 <HeroHeader
                 variant="dark"
-                heroHeading="Website Work"
+                heroHeading="Folio"
                 heroCopy="A selection of bespoke website design and development projects, from custom Webflow websites to responsive digital experiences for businesses, creative professionals and entertainment clients."
                 classes="auto-h"
                 ></HeroHeader>

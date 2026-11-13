@@ -59,9 +59,9 @@ export const pages = {
             description: "A selection of bespoke website design and development projects for businesses, creative professionals and entertainment clients.",
         },
     },
-    "/work/websites": {
+    "/folio": {
         component: Websites,
-        label: "Websites",
+        label: "Folio",
         seo: {
             title: "Website Projects | RE Design",
             description: "A selection of website design and development projects by RE Design.",
@@ -88,7 +88,7 @@ export const pages = {
 
     ...Object.fromEntries(
         websiteProjects.map((project) => [
-            `/work/websites/${project.slug}`,
+            `/folio/${project.slug}`,
             {
                 component: WebsiteProject,
                 label: project.title,

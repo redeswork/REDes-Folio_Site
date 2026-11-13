@@ -10,12 +10,12 @@ import "./App.scss";
 import { pages } from "./pages/pageIndex";
 import { WebsiteProject } from "./pages/work/websites/websiteTemplate";
 import { TransitionMask } from "./components/global/TransitionMask";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/nav/Navbar";
 import { PageMetadata } from "./components/seo/PageMetadata";
 
 const routes = [
     ...Object.entries(pages)
-        .filter(([path]) => !path.startsWith("/work/websites/"))
+        .filter(([path]) => !path.startsWith("/folio/"))
         .map(([path, page]) => {
             const Page = page.component;
 
@@ -25,7 +25,7 @@ const routes = [
             };
         }),
     {
-        path: "/work/websites/:slug",
+        path: "/folio/:slug",
         element: <WebsiteProject />,
     },
     {

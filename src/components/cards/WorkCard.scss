@@ -2,6 +2,10 @@
 @use '../../breakpoints' as bp;
 
 
+.work-card-wrap {
+    width: 100%;
+}
+
 // WORK CARD
 
 .work-card {
@@ -15,15 +19,25 @@
     gap: 1.5rem;
 
     overflow: hidden;
+    
+    transition: transform 0.3s;
+    &:hover {
+        transform: scale(1.0125) !important;
+    }
 
     @include bp.tablet {
         grid-template-columns: repeat(6, minmax(0, 1fr));
         gap: 1rem;
+        &:hover {
+            transform: scale(1) !important;
+        }
     }
 
     @include bp.mobile-l {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+
+
 }
 
 
@@ -90,12 +104,12 @@
     min-height: 0;
 
     @include bp.tablet {
-        grid-column: 1 / 4;
+        grid-column: 4 / 7;
     }
 
     @include bp.mobile-l {
         grid-column: 1 / 5;
-        grid-row: 2 / 3;
+        grid-row: 1 / 2;
     }
 }
 
@@ -135,20 +149,27 @@
 
     text-transform: uppercase;
     color: var(--colour-dark);
+
+    @include bp.mobile-l {
+        font-size: var(--text-h3);
+    }
 }
 
 // DATE TEXT
 
 .work-card-date-wrap {
-    // background-color: var(--colour-dark);
+    background-color: var(--colour-cta);
     display: inline-flex;
     border-color: var(--colour-cta);
     border-width: 1px;
+    border-radius: .25em;
     font-size: var(--text-p-small);
-    padding: .5em;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: .25em .5em;
 }
 .work-card-date {
-    color: var(--colour-cta);
+    color: var(--colour-light);
 }
 
 // IMAGE
@@ -160,7 +181,7 @@
 
     display: flex;
 
-    grid-column: 2 / 7;
+    grid-column: 1 / 7;
     grid-row: 1 / 2;
 
     width: 100%;
@@ -169,11 +190,12 @@
     aspect-ratio: 4 / 3;
 
     @include bp.tablet {
-        grid-column: 4 / 7;
+        grid-column: 1 / 4;
     }
 
     @include bp.mobile-l {
         grid-column: 1 / 5;
+        grid-row: 2/3;
     }
 }
 

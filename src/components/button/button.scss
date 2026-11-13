@@ -60,6 +60,11 @@
   // }
 
   cursor: pointer;
+
+
+  &.navlink {
+    padding: 0px;
+  }
 }
 
 .button.underlined {
