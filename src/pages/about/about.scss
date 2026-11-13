@@ -23,7 +23,7 @@
 
     grid-column: 1/13;
 
-    row-gap: 1rem;
+    row-gap: 1.0rem;
 
     @include bp.tablet {
         grid-column: 1/7;
