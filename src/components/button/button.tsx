@@ -13,7 +13,8 @@ export function Button({
 
     handleClick,
 
-    variant = "filled-border",
+    classes = "filled-border",
+
     text = "This is a button",
     textColour = "var(--colour-dark)",
     textColourTarget = "var(--colour-light)",
@@ -47,6 +48,8 @@ export function Button({
     dotColour = "var(--colour-cta)",
     link = "",
     transitionKey = "swipe-between",
+
+    newTab = false,
 }: {
     anim?: string;
     animDuration?: number;
@@ -57,6 +60,8 @@ export function Button({
     variant?: string;
 
     handleClick?: () => void;
+
+    classes?: string;
 
     text?: string;
     textColour?: string;
@@ -88,6 +93,7 @@ export function Button({
     dotColour?: string;
     link?: string;
     transitionKey?: string;
+    newTab?: boolean;
 }) {
     const Icon = icons[icon];
     const LargeIcon = icons[largeIcon];
@@ -97,7 +103,7 @@ export function Button({
 
     return (
         <div
-            className={`button ${variant === "underlined" ? "underlined" : ""}`}
+            className={`button ${classes}`}
             data-anim={anim}
             data-anim-duration={animDuration}
             data-anim-origin={animOrigin}
@@ -248,6 +254,7 @@ export function Button({
                 className="button-link"
                 to={link}
                 data-transition={transitionKey}
+                target={newTab === true ? "_blank" : ""}
                 />
             )}
         </div>

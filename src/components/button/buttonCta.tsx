@@ -6,12 +6,16 @@ export function ButtonCta(
     {
         transitionKey = "swipe-between",
         text = "Button Text",
-        link = ""
+        link = "",
+        newTab = false,
+        classes = "",
      }:
     {
         transitionKey?: string;
         text?: string;
         link?: string;
+        newTab?: boolean;
+        classes?: string;
     }
 ) {
 
@@ -36,6 +40,10 @@ export function ButtonCta(
         link={link}
 
         text={text}
+
+        newTab={newTab}
+
+        classes={classes}
         >
 
         </Button>

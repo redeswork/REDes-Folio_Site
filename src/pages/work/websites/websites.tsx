@@ -24,11 +24,11 @@ export function Websites() {
 
                 <div className="grid" style={{marginTop: "2rem"}}>
 
-                    <div className="content vertical rem-2" style={{gridColumn: "1/13"}}>
+                    <div className="content vertical rem-2">
 
                         {websiteProjects.map((project) => (
                             
-                            <WorkCard key={project.slug} title={project.title} client={project.clientName} slug={project.slug} img={project.thumbnailUrl} bgCol={project.colour}/>
+                            <WorkCard key={project.slug} title={project.title} client={project.clientName} dateText={project.dateText} slug={project.slug} img={project.thumbnailUrl} bgCol={project.colour}/>
                         ))}
 
                     </div>

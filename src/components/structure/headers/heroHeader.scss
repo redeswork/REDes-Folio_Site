@@ -1,7 +1,11 @@
+@use '../../../breakpoints' as bp;
+
+
 
 .hero-header-block {
 
-    display: grid;
+    display: subgrid;
+    margin-bottom: 5rem;
 }
 
 .hero-heading-wrap {
@@ -13,11 +17,18 @@
     flex-direction: column;
 
     gap: 1rem;
+
+    @include bp.tablet {
+      grid-column: 1/7;
+    }
+    @include bp.mobile-l {
+      grid-column: 1/5;
+    }
 }
 
 .hero-heading {
 
-  font-size: var(--text-h-3);
+  font-size: var(--text-h-1);
   font-weight: 400;
   line-height: 1.2em;
   letter-spacing: -0.025em;
@@ -54,7 +65,7 @@
 
 .hero-copy {
 
-    font-family: Inter, Arial, serif;
+    // font-family: Inter, Arial, serif;
 
     font-size: var(--text-p);
 
@@ -81,6 +92,15 @@
     flex-direction: column;
 
     gap: 0.5rem;
+
+    grid-column: 1/7;
+
+    @include bp.tablet {
+      grid-column: 1/7;
+    }
+    @include bp.mobile-l {
+      grid-column: 1/5;
+    }
 }
 
 .hero-sub-content {

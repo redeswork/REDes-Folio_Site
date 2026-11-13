@@ -33,8 +33,8 @@ export function HeroHeader( {
 
     return(
 
-        <>
-            <header className={`grid ${classes ?? ""}`} style={{rowGap: "0.5rem"}}>
+        <header className="hero-header-block">
+            <div className={`grid ${classes ?? ""}`} style={{rowGap: "0.5rem"}}>
 
                 {!childrenOverride && (
                 <>
@@ -43,7 +43,7 @@ export function HeroHeader( {
                         <h1 className="hero-heading light" data-anim="splitChars" style={{maxWidth: "", color: textColours[variant]}}>{heroHeading}</h1>
                     </div>
 
-                    <div className="hero-content" style={{gridColumn: "1/13", gridRow: "2/3"}}>
+                    <div className="hero-content" style={{gridRow: "2/3"}}>
 
                         {heroSubHeading && (
                         <h2>
@@ -65,8 +65,8 @@ export function HeroHeader( {
                 )}
 
             
-            </header>    
-        </>
+            </div>    
+        </header>
     
     )
 }

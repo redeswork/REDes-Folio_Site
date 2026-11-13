@@ -25,6 +25,13 @@
     gap: calc(3 * 0.382em);
 
     grid-column: 1/7;
+
+    @include bp.tablet {
+        grid-column: 1/7;
+    }
+    @include bp.mobile-l {
+        grid-column: 1/5;
+    }
 }
 
 .logo-footer-wrap-icon {
@@ -50,6 +57,13 @@
     grid-column: 9/13;
 
     gap: 1.2rem;
+
+    @include bp.tablet {
+        grid-column: 1/7;
+    }
+    @include bp.mobile-l {
+        grid-column: 1/5;
+    }
 }
 
 .footer-link {

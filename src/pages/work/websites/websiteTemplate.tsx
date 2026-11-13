@@ -5,6 +5,7 @@ import { websiteProjects } from "./projects/websiteData";
 import { Section } from "../../../components/structure/Section";
 import { Breadcrumbs } from '../../../function/createBreadcrubs';
 import { Footer } from '../../../components/structure/Footer';
+import { ButtonCta } from '../../../components/button/buttonCta';
 
 export function WebsiteProject() {
     const { slug } = useParams();
@@ -41,8 +42,6 @@ export function WebsiteProject() {
                           
                             <div className='project-title-wrap'>
                                 <h1 className='project-title'>{project.title}</h1>
-
-
                                 <div className='project-details-wrap'>
                                     <div className='project-detail-wrap'>
                                         <h2 className='project-detail-heading'>Client:</h2>
@@ -53,18 +52,43 @@ export function WebsiteProject() {
                                         <h3 className='project-detail-text'>{project.dateText}</h3>
                                     </div>
                                 </div>
+                                <div className='project-button-wrap'>
+                                    {project.status === "live" ? (
+                                        <ButtonCta
+                                        text='Visit Site'
+                                        classes='project-page-button'
+                                        link={project.link}
+                                        newTab={true}></ButtonCta>
+                                        ) : (
+                                    <p className='project-closed-text'>This event is now closed.</p>)}
+                                </div>
                             </div>
 
-                            <div className="project-desc">
-                                {project.description.map((paragraph, index) => (
-                                    <p key={index}>{paragraph}</p>
-                                ))}
-                            </div>
 
                             <div className='project-img-wrap' data-anim-flip="source-container">
+                                <div className='project-thumbnail-overlay'>
+                                    <p className='project-overlay-heading'>VISIT WEBSITE</p>
+                                </div>
                                 <p className='flip-identifier'>{project.title}</p>
                                 <img data-anim-flip="flip-item" className="work-card-bg-img flip-destination-state" src={project.thumbnailUrl} style={{backgroundColor: project.colour}}></img>
                             </div>
+
+
+                            <div className='project-info-wrap'>
+
+                                <p className='project-detail-heading'>Overview</p>
+                                <div className="project-desc">
+                                    {project.description.map((paragraph, index) => (
+                                        <p key={index}>{paragraph}</p>
+                                    ))}
+                                </div>
+                            </div>
+                            
+
+
+
+
+
                         </div>
 
 

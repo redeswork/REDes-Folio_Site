@@ -165,9 +165,9 @@ body {
 
 }
 
-*:not(.button, .button *) {
-  font-weight: 300;
-}
+// *:not(.button, .button *) {
+//   font-weight: 300;
+// }
 
 * svg {
     width: 100%;
@@ -362,6 +362,8 @@ a {
   width: 100%;
   height: 100%;
 
+  grid-column: 1/13;
+
   &.align-top {
     align-items: start;
   }
@@ -388,6 +390,13 @@ a {
   }
   &.rem-2 {
     gap: 2rem;
+  }
+
+  @include bp.tablet {
+    grid-column: 1/7;
+  }
+  @include bp.mobile-l {
+    grid-column: 1/5;
   }
 
 }
