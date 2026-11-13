@@ -5,7 +5,7 @@ export function WorkCard(
     {
         title = "Work Card",
         client = "Client name",
-        dateText = "00 / 00",
+        // dateText = "00 / 00",
         slug,
         img,
         bgCol
@@ -13,7 +13,7 @@ export function WorkCard(
     {
         title?: string;
         client?: string;
-        dateText?: string;
+        // dateText?: string;
         slug: string;
         img: string;
         bgCol: string;
