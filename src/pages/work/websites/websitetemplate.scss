@@ -42,8 +42,8 @@
 
     grid-column: 1/13;
     grid-row: 4/5;
-    margin-top: var(--section-padding);
-    margin-bottom: var(--section-padding);
+    margin-top: calc(0.5 * var(--section-padding));
+    margin-bottom: calc(0.5 * var(--section-padding));
 
     @include bp.tablet {
         grid-column: 1/7;

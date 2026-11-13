@@ -158,8 +158,8 @@ export const websiteProjects = [
         link: "https://www.raybradshaw.com/",
         colour: "#d87e48",
         description: [
-            "Murder She Didn't Write is a hit play where the audience acts as the writer of a murder mystery.",
-            "The talented cast improvise the plot based on audience suggestions."
+            "Ray Bradshaw is a multi-award winning stand up comedian, who is a regular fixture on UK television. He is regularly on tour with Frankie Boyle and has recently supported John Bishop.",
+            `Built to service his latest stand up tour "CODA". Built featuring CMS features for tour dates and sign-up form for contact.`
         ],
     },
 ];

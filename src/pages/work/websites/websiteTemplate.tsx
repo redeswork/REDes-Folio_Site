@@ -140,13 +140,13 @@ export function WebsiteProject() {
                     </div>
                 </div>
             </Section>
-
+            <Footer></Footer>
             </div>
 
             <div className="page-bg light"></div>
 
         </main>
-        <Footer></Footer>
+        
         </>
     );
 }
