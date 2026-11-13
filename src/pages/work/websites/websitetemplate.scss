@@ -24,6 +24,8 @@
     gap: 1rem;
     row-gap: 4rem;
 
+    margin-bottom: 2rem;
+
     @include bp.tablet{
         grid-column: 1/7;
     }
@@ -40,7 +42,8 @@
 
     grid-column: 1/13;
     grid-row: 4/5;
-    // margin-top: 5rem;
+    margin-top: var(--section-padding);
+    margin-bottom: var(--section-padding);
 
     @include bp.tablet {
         grid-column: 1/7;
@@ -246,7 +249,7 @@
 .more-projects-label {
     font-size: var(--text-h3);
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 1.5rem;
 }
 .more-projects-wrapper {

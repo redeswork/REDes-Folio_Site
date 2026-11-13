@@ -6,6 +6,8 @@ import { Section } from "../../../components/structure/Section";
 import { Breadcrumbs } from '../../../function/createBreadcrubs';
 import { Footer } from '../../../components/structure/Footer';
 import { ButtonCta } from '../../../components/button/buttonCta';
+import { useMemo } from 'react';
+
 
 export function WebsiteProject() {
     const { slug } = useParams();
@@ -14,10 +16,12 @@ export function WebsiteProject() {
         (project) => project.slug === slug
     );
 
-    const moreProjects = websiteProjects
-        .filter((item) => item.slug !== slug)
-        .slice(0, 3);
-
+    const moreProjects = useMemo(() => {
+        return websiteProjects
+            .filter((item) => item.slug !== slug)
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 3);
+    }, [slug]);
 
     return (
         <>
