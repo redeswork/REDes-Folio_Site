@@ -52,23 +52,20 @@ export function WebsiteProject() {
                                         <h3 className='project-detail-text'>{project.dateText}</h3>
                                     </div>
                                 </div>
-                                <div className='project-button-wrap'>
-                                    {project.status === "live" ? (
+                                {project.status === "live" && (
+                                    <div className='project-button-wrap'>
+                                    
                                         <ButtonCta
                                         text='Visit Site'
                                         classes='project-page-button'
                                         link={project.link}
                                         newTab={true}></ButtonCta>
-                                        ) : (
-                                    <p className='project-closed-text'>This event is now closed.</p>)}
-                                </div>
+                                        
+                                    </div>)}
                             </div>
 
 
                             <div className='project-img-wrap' data-anim-flip="source-container">
-                                <div className='project-thumbnail-overlay'>
-                                    <p className='project-overlay-heading'>VISIT WEBSITE</p>
-                                </div>
                                 <p className='flip-identifier'>{project.title}</p>
                                 <img data-anim-flip="flip-item" className="work-card-bg-img flip-destination-state" src={project.thumbnailUrl} style={{backgroundColor: project.colour}}></img>
                             </div>
