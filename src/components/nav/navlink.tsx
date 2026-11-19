@@ -31,6 +31,10 @@ export function Navlink(
 
             text={text}
             link={link}
+
+            attributes={{
+                "data-menu-close": ""
+            }}
         >
             
         </Button>

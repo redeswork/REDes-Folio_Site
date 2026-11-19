@@ -3,6 +3,9 @@ import { Link } from "react-router";
 
 import './button.scss'
 
+export type ButtonAttributes = React.HTMLAttributes<HTMLDivElement> & {
+    [key: `data-${string}`]: string | undefined;
+};
 
 export function Button({
     anim,
@@ -50,6 +53,9 @@ export function Button({
     transitionKey = "swipe-between",
 
     newTab = false,
+
+    attributes = {},
+
 }: {
     anim?: string;
     animDuration?: number;
@@ -94,6 +100,8 @@ export function Button({
     link?: string;
     transitionKey?: string;
     newTab?: boolean;
+
+    attributes?: ButtonAttributes;
 }) {
     const Icon = icons[icon];
     const LargeIcon = icons[largeIcon];
@@ -125,6 +133,8 @@ export function Button({
             style={{ borderColor: borderColour }}
 
             onClick={handleClick}
+
+            {...attributes}
         >
             {/* LARGE ICON */}
             {enableLargeIcon && (

@@ -20,7 +20,7 @@ export function Navbar() {
                         <Navlink text='Home Dev' link='/home-dev' data-menu-close></Navlink>
                         <Navlink text='Folio' link='/folio' data-menu-close></Navlink>
                         <Navlink text='About' link='/about' data-menu-close></Navlink>
-                        <ButtonCta text='Get in Touch' link='/contact' classes='nav-button' data-menu-close></ButtonCta>
+                        <ButtonCta text='Get in Touch' link='/contact' classes='nav-button' attributes={{"data-menu-close": ""}}></ButtonCta>
                     </nav>
 
                     <div className='menu-icon-wrap' data-menu-icon="menuAnim1" data-anim="menuIconWrap" data-menu-open data-menu-close>

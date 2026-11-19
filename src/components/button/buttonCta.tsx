@@ -1,6 +1,5 @@
 import { Button } from "./button";
-
-
+import type { ButtonAttributes } from "./button";
 
 export function ButtonCta(
     {
@@ -10,6 +9,7 @@ export function ButtonCta(
         newTab = false,
         classes = "",
         textSize = "var(--text-p)",
+        attributes = {},
      }:
     {
         transitionKey?: string;
@@ -18,6 +18,7 @@ export function ButtonCta(
         newTab?: boolean;
         classes?: string;
         textSize?: string;
+        attributes?: ButtonAttributes;
     }
 ) {
 
@@ -48,6 +49,8 @@ export function ButtonCta(
         classes={classes}
 
         textSize={textSize}
+
+        attributes={attributes}
         >
 
         </Button>
