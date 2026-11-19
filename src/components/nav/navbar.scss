@@ -1,3 +1,5 @@
+@use '../../breakpoints' as bp;
+
 :root {
     --nav-bg-colour: var(--colour-light);
 }
@@ -87,7 +89,21 @@
     align-items: center;
     justify-content: end;
 
-    gap: 1rem;
+    gap: 1.5rem;
+
+    @include bp.tablet {
+        position: fixed;
+        inset: 0%;
+        top: var(--nav-h);
+        background-color: var(--nav-bg-colour);
+        padding-left: var(--wrapper-edge);
+        padding-right: var(--wrapper-edge);
+        padding-top: var(--nav-h);
+        padding-bottom: var(--nav-h);
+        flex-direction: column;
+        justify-content: start;
+
+    }
 }
 
 .nav-link {
@@ -95,4 +111,24 @@
     color: var(--colour-dark);
 
     text-transform: uppercase;
+}
+
+.menu-icon-wrap {
+    display: none;
+
+
+    @include bp.tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 30%;
+        aspect-ratio: 1.25/1;
+        // aspect-ratio: 1/1;
+    }
+}
+.menu-icon-dash {
+    width: 100%;
+    height: 1px;
+    background-color: var(--colour-dark);
 }

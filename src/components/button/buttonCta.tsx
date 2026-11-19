@@ -9,6 +9,7 @@ export function ButtonCta(
         link = "",
         newTab = false,
         classes = "",
+        textSize = "var(--text-p)",
      }:
     {
         transitionKey?: string;
@@ -16,6 +17,7 @@ export function ButtonCta(
         link?: string;
         newTab?: boolean;
         classes?: string;
+        textSize?: string;
     }
 ) {
 
@@ -44,6 +46,8 @@ export function ButtonCta(
         newTab={newTab}
 
         classes={classes}
+
+        textSize={textSize}
         >
 
         </Button>

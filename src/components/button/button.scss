@@ -64,6 +64,16 @@
 
   &.navlink {
     padding: 0px;
+    @include bp.tablet {
+      font-size: var(--text-h5);
+      width: 100%;
+    }
+  }
+  &.nav-button {
+    @include bp.tablet {
+      font-size: var(--text-h5);
+      width: 100%;
+    }
   }
 }
 

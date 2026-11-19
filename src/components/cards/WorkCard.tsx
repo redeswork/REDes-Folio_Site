@@ -5,7 +5,7 @@ export function WorkCard(
     {
         title = "Work Card",
         client = "Client name",
-        // dateText = "00 / 00",
+        dateText = "00 / 00",
         slug,
         img,
         bgCol
@@ -13,7 +13,7 @@ export function WorkCard(
     {
         title?: string;
         client?: string;
-        // dateText?: string;
+        dateText?: string;
         slug: string;
         img: string;
         bgCol: string;
@@ -33,11 +33,10 @@ export function WorkCard(
             </div> */}
             <div className='work-card-content'>
                 <div className='work-card-title-wrap'>
-                    <div className='work-card-date-wrap'>
-                        <p className='work-card-date'>{client}</p>
-                    </div>
                     <h3 className='work-card-title'>{title}</h3>
+                    <h4 className='work-card-date'>{dateText}</h4>
                 </div>
+                <h4 className='work-card-client'>{client}</h4>
             </div>
             <div className='work-card-bg' data-anim-flip="target-container">
                 <p className='flip-identifier'>{title}</p>

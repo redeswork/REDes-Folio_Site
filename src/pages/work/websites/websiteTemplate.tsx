@@ -1,12 +1,13 @@
 import './websitetemplate.scss'
 
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import { websiteProjects } from "./projects/websiteData";
 import { Section } from "../../../components/structure/Section";
 import { Breadcrumbs } from '../../../function/createBreadcrubs';
 import { Footer } from '../../../components/structure/Footer';
 import { ButtonCta } from '../../../components/button/buttonCta';
 import { useMemo } from 'react';
+import { WorkCard } from '../../../components/cards/WorkCard';
 
 
 export function WebsiteProject() {
@@ -49,7 +50,7 @@ export function WebsiteProject() {
                                 <div className='project-details-wrap'>
                                     <div className='project-detail-wrap'>
                                         <h2 className='project-detail-heading'>Client:</h2>
-                                        <h3 className='project-detail-text'>{project.clientName}</h3>
+                                        <h3 className='project-detail-text'><a className='intext-link' href={project.clientLink} target='_blank'>{project.clientName}</a></h3>
                                     </div>
                                     <div className='project-detail-wrap'>
                                         <h2 className='project-detail-heading'>Date:</h2>
@@ -77,10 +78,10 @@ export function WebsiteProject() {
 
                             <div className='project-info-wrap'>
 
-                                <p className='project-detail-heading'>Overview</p>
+                                <p className='sub-heading'>Overview</p>
                                 <div className="project-desc">
                                     {project.description.map((paragraph, index) => (
-                                        <p key={index}>{paragraph}</p>
+                                        <p className="copy" key={index}>{paragraph}</p>
                                     ))}
                                 </div>
                             </div>
@@ -103,7 +104,7 @@ export function WebsiteProject() {
             </Section>
 
             <Section classes='light no-top-padding'>
-                <h2 className='more-projects-label'>More Projects</h2>
+                <h2 className='section-heading'>More Projects</h2>
                 <div
                 className='more-projects-swiper'
                 data-swiper
@@ -116,24 +117,33 @@ export function WebsiteProject() {
                     <div className='more-projects-wrapper' data-swiper-wrapper>
 
                         {moreProjects.map((moreProject) => (
-                            <Link 
+                            <div 
                             key={moreProject.title}
-                            className='more-projects-card'
-                            to={`/folio/${moreProject.slug}`}
+                            className=''
                             aria-label={`View ${moreProject.title} website project`}
-                            data-transition="flip-img-clone"
                             data-swiper-slide>
+                                <WorkCard
+                                    key={moreProject.slug}
+                                    title={moreProject.title}
+                                    client={moreProject.clientName}
+                                    slug={moreProject.slug}
+                                    img={moreProject.thumbnailUrl}
+                                    bgCol={moreProject.colour}
+                                    dateText={moreProject.dateYear}
+                                >
 
-                                <div className='more-projects-img-wrap' data-anim-flip="target-container">
+                                </WorkCard>
+
+                                {/* <div className='more-projects-img-wrap' data-anim-flip="target-container">
                                     <p className='flip-identifier'>{moreProject.title}</p>
                                     <img data-anim-flip="flip-item" className='work-card-bg-img' src={moreProject.thumbnailUrl} style={{backgroundColor: moreProject.colour}}></img>
                                 </div>
                                 <div className='more-projects-content'>
                                     <h3 className='more-projects-title'>{moreProject.title}</h3>
                                     <h4 className='more-projects-client'>{moreProject.clientName}</h4>
-                                </div>
+                                </div> */}
 
-                            </Link>
+                            </div>
 
                         ))}
 

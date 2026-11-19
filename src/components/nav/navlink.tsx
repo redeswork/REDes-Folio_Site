@@ -6,7 +6,7 @@ import { Button } from "../button/button";
 export function Navlink(
     {
         text = "Nav Link",
-        link = "#"
+        link = "#",
     }:
     {
         text?: string;

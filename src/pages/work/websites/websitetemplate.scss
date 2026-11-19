@@ -126,10 +126,10 @@
 
     align-self: center;
 
-    p {
-        color: var(--colour-dark);
-        font-size: var(--text-p);
-    }
+    // p {
+    //     color: var(--colour-dark);
+    //     font-size: var(--text-p);
+    // }
 
     @include bp.tablet {
         grid-column: 4/7;
@@ -251,6 +251,9 @@
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 1.5rem;
+}
+.more-projects-swiper {
+    margin-top: 2rem;
 }
 .more-projects-wrapper {
     display: grid;

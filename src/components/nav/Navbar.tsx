@@ -16,12 +16,18 @@ export function Navbar() {
                         </span>
                     </Link>
 
-                    <nav className='nav-links' aria-label="Main navigation">
+                    <nav className='nav-links' aria-label="Main navigation" data-menu-panel="menuPanelBasic1" data-anim="menuPanel" data-menu-breakpoint="tablet">
                         <Navlink text='Home Dev' link='/home-dev'></Navlink>
                         <Navlink text='Folio' link='/folio'></Navlink>
                         <Navlink text='About' link='/about'></Navlink>
-                        <ButtonCta text='Get in Touch' link='/contact'></ButtonCta>
+                        <ButtonCta text='Get in Touch' link='/contact' classes='nav-button'></ButtonCta>
                     </nav>
+
+                    <div className='menu-icon-wrap' data-menu-icon="menuAnim1" data-anim="menuIconWrap" data-menu-open data-menu-close>
+                        <div className='menu-icon-dash' data-anim="menuIconDash"></div>
+                        <div className='menu-icon-dash' data-anim="menuIconDash"></div>
+                        <div className='menu-icon-dash' data-anim="menuIconDash"></div>
+                    </div>
                 </div>
             </div>
             <div className='nav-bg'></div>

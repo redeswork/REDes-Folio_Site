@@ -8,6 +8,7 @@ import { WebsiteProject } from "./work/websites/websiteTemplate";
 import { Logopage } from "./logo";
 import { About } from "./about/About";
 import { Playground } from "./playground/Playground";
+import { Stylesheet } from "./stylesheet/stylesheet";
 
 export type PageSeo = {
     title: string;
@@ -83,6 +84,15 @@ export const pages = {
             description: "lorem",
             noIndex: false
         },
+    },
+    "/stylesheet": {
+        component: Stylesheet,
+        label: "Stylesheet",
+        seo: {
+            title: "REDES | Stylesheet",
+            description: "",
+            noIndex: true
+        }
     },
 
 

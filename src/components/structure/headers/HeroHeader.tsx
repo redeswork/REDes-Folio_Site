@@ -40,7 +40,7 @@ export function HeroHeader( {
                 <>
                     <div className="hero-heading-wrap" style={{gridRow: "1/2"}}>
                         {breadcrumb && ( <Breadcrumbs variant={variant} includeHome={true}/> )}
-                        <h1 className="hero-heading light" data-anim="splitChars" style={{maxWidth: "", color: textColours[variant]}}>{heroHeading}</h1>
+                        <h1 className="page-heading light" data-anim="splitChars" style={{maxWidth: "", color: textColours[variant]}}>{heroHeading}</h1>
                     </div>
 
                     <div className="hero-content" style={{gridRow: "2/3"}}>
